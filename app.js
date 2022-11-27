@@ -2,7 +2,7 @@ import express from "express";
 // we use this module to connect the route path
 import {join} from 'path';  
 import home from './routes/home.js';
-import event from './routes/event.js';
+import Event from './routes/event.js';
 const app=express();
 
 const port=process.env.PORT || 5000;
@@ -19,7 +19,7 @@ app.set('view engine','ejs');
 // routers for home page content
 app.use('/',home);
 // router for event page content
-app.use('/events', event);
+app.use('/events', Event);
 
 app.listen(port, ()=>{
     console.log(`server is running at http://localhost:${port}`);

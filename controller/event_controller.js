@@ -1,10 +1,12 @@
+import { render } from "ejs";
+
 class event_handler{
     static my_event=(req,res)=>{
-        res.send('this is event page');
+        res.render('event',{'title':'Upcoming events!'});
     }
 
     static event_2=(req,res)=>{
-        res.send('this is first event');
+        res.render('home',{'title':'ok'});
     }
 }
 
