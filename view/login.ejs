@@ -6,8 +6,19 @@
     <!-- drop your code here 👇👇👇👇-->
         
 
-        <h3>this is login page</h3>
-
+        <form method="post">
+            <div class="form_elm">
+                <label for="email">Email id</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form_elm">
+                <label for="password">Password</label>
+                <input type="password" name="password" required="true">
+            </div>
+            <div class="form_elm">
+                <button type="submit"> Log in</button>
+            </div>
+        </form>
 
 <!-- footer -->
 <%- include('./partials/footer.ejs') %>
