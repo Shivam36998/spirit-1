@@ -3,6 +3,7 @@ import express from "express";
 import {join} from 'path';  
 import home from './routes/home.js';
 import Event from './routes/event.js';
+import login from './routes/login.js';
 const app=express();
 
 const port=process.env.PORT || 5000;
@@ -20,6 +21,8 @@ app.set('view engine','ejs');
 app.use('/',home);
 // router for event page content
 app.use('/events', Event);
+// router for login page content
+app.use('/login',login);
 
 app.listen(port, ()=>{
     console.log(`server is running at http://localhost:${port}`);
