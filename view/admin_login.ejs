@@ -7,6 +7,10 @@
 
     <body>
         <div class="login_form">
+            <% var messages %>
+            <% if(messages!='undefined'){%>
+                <h3 style="color: red;"> <%= messages %> </h3>
+           <% } %>    
             <div class="head">Admin login 😎</div>
             <div class="form">
                 <form method="post">

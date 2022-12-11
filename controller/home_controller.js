@@ -12,6 +12,16 @@ class home_event{
     static My_registration=(req,res)=>{
         res.render('registration',{'title':'welcome!'})
     }
+
+    static speakers=(req,res)=>{
+        res.render('speakers',{'title':'spirit 2023: speakers!'});
+    }
+    static about=(req,res)=>{
+        res.render('about',{'title':'spirit 2023: know more about us'})
+    }
+    static sponsors=(req,res)=>{
+        res.render('sponsors',{'title':'our sponsors'});
+    }
 }
 
 

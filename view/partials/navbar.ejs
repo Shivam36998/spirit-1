@@ -10,8 +10,26 @@
 <a href="/events">Events</a>
 <a href="/gallery">Gallery</a>
 <a href="/login">Login</a>
-<a href="/registration">Registration</a>
-<a href="/logout">logout</a>
+<a id="login" href="/registration">Registration</a>
+<a id="logout" class="hide" href="/logout">logout</a>
+
+<br><br>
+<a href="/sponsors" style="color: green;"> sponsors</a>
+<a href="/speakers" style="color: red;"> speakers</a>
+<a href="/about" style="color: black;"> about us</a>
+
+
+<script>
+    let log=document.getElementById("logout");
+    let login=document.getElementById("login");
+
+    login.addEventListener('click',()=>{
+        log.classList.toggle("hide");
+    })
+
+
+    
+</script>
 
 
 

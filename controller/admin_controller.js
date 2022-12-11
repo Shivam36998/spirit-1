@@ -26,11 +26,13 @@ static admin_verify=async(req,res)=>{
                res.redirect('/admin/admin_home');
             }
             else{
-                res.send('worg emailid or password');
+                res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
+                
             }
         }
         else{
-            res.send('you are not a registerd user')
+            res.render('admin_login',{'title':'login admin', messages:'All field requires!! 😓'});
+            
         }
     }catch(err){
         console.log(err);
