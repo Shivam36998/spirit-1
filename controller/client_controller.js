@@ -6,20 +6,24 @@ class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
         try {
-            const { name, email, phone, password } = req.body;
+            const { name,gender,college, email, phone } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
-                res.send("Email already exist");
+                res.render('greet',{'title':'spirit', message:'Email already exist!!'});
             }
             else {
                 const client_doc = new client_model({
                     name: name,
+                    gender:gender,
+                    college:college,
                     email: email,
                     phone: phone,
                     password: hashPassword,
 
                 })
                 const result = await client_doc.save();
+                console.log(typeof(result.gender));
+                
 
                 const saved_Client = await client_model.findOne({ email: email });
                 // generate JWT token
@@ -130,26 +134,26 @@ class data_collector {
 
 
     // reset email
-    static sendClientPasswordResetEmail= async(req,res)=>{
-        try{
-            const {email}=req.body;
-            if(email){
-                const client=await client_model.findOne({email:email})
-                const secret=client._id + process.env.JWT_SECREAT_KEY;
-                if(client){
-                    const token = jwt.sign({ userID: client._id }, secret, { expiresIn: '15m' });
-                    console.log(token);
-                }else{
-                    res.send("email does not exist")
-                }
-            }else{
-                res.send("email required")
-            }
-        }catch(error){
-            console.log(error);
+    // static sendClientPasswordResetEmail= async(req,res)=>{
+    //     try{
+    //         const {email}=req.body;
+    //         if(email){
+    //             const client=await client_model.findOne({email:email})
+    //             const secret=client._id + process.env.JWT_SECREAT_KEY;
+    //             if(client){
+    //                 const token = jwt.sign({ userID: client._id }, secret, { expiresIn: '15m' });
+    //                 // console.log(token);
+    //             }else{
+    //                 res.send("email does not exist")
+    //             }
+    //         }else{
+    //             res.send("email required")
+    //         }
+    //     }catch(error){
+    //         console.log(error);
             
-        }
-    }
+    //     }
+    // }
 }
 
 export default data_collector;

@@ -1,24 +1,13 @@
 import subscriber_model from "../../model/subscriber_model.js";
-const sub_btn=document.getElementById("subscriber");
-const result_from =document.getElementById("email_sub").value;
+const email=document.getElementById('email_sub');
+    const subscriber=document.getElementById('subscriber');
 
-const creat_subscriber= async ()=>{
-    try{
-        const email=result_from;
-        const subs_doc=new subscriber_model({
-           email:email
-        })
-        const result= await subs_doc.save();
-        result_from.value="oioi";
-        console.log(result);
-        
+    subscriber.addEventListener('click',()=>{
+        console.log(email.value);
+        email.value=""
+    })
+    
 
-    }catch(err){
-        console.log(err);
-        
-    }
-}
 
-sub_btn.onclick=creat_subscriber();
 // console.log(result_from);
 

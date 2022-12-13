@@ -21,5 +21,12 @@ router.post('/registration',data_collector.creat_client);
 // router.get('/login',home_event.My_login);
 // router.get('/registration',home_event.My_registration);
 
+// forgot password
+router.get('/forgetpassword',home_event.forgetPassword);
+router.post('/forgetpassword',home_event.forgetPassword_verify);
+
+// reset password
+router.get('/reset-password/:id/:token',home_event.resetPassword);
+router.post('/reset-password/:id/:token',home_event.savePassword);
 
 export default router;

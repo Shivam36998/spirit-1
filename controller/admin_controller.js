@@ -1,5 +1,6 @@
-import admin_model from "../model/admin_model.js";
+import client_model from "../model/cliend_model.js";
 import data_collector from "./client_controller.js";
+import bcrypt from 'bcrypt';
 // import jwt from 'jsonwebtoken';
 
 
@@ -19,19 +20,28 @@ static adm_login= async(req,res)=>{
 static admin_verify=async(req,res)=>{
     try{
         const {email,password}=req.body;
-        const result= await admin_model.findOne({email:email});
+        const all_result= await client_model.find();
+        const result= await client_model.findOne({email:email});
         if(result!=null){
             // const token=result.generateAuthToken();
-            if(result.email==email && result.password==password){
-               res.redirect('/admin/admin_home');
+            const passwordMatch=await bcrypt.compare(password,result.password)
+            if(passwordMatch){
+                if(result.is_admin===false){
+                    res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password🫤'});
+                }
+                else{
+                    req.session.client_id=result._id;
+                    res.redirect('/admin/admin_home');
+                    
+                }
             }
             else{
                 res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
-                
             }
+           
         }
         else{
-            res.render('admin_login',{'title':'login admin', messages:'All field requires!! 😓'});
+            res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
             
         }
     }catch(err){
@@ -42,13 +52,33 @@ static admin_verify=async(req,res)=>{
    
 }
 
+static adminHome=async(req,res)=>{
+    try{ 
+        const all_result= await client_model.find();
+
+        res.render('admin',{'title':'welcome to admin pannel', data:all_result});
+    }catch(error){
+        console.log(error);
+        
+    }
+}
+
+static events_reg= async(req,res)=>{
+    try{
+
+        res.render('events_reg',{'title':'all events'})
+    }catch(error){
+        console.log(error);
+        
+    }
+}
+
 
 static admin_logout= async(req,res)=>{
 
     try{
-        req.session.destroy((err) => {
-            res.redirect('/') // will always fire after session is destroyed
-          })
+        req.session.destroy();
+        res.redirect('/admin')
     } catch(error){
         console.log(error);
         

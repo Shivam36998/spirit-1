@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 
 const client_schema= new mongoose.Schema({
     name:{type:String, required:true, trim:true},
+    gender:{type:String, trim:true},
+    college:{type:String, required:true, trim:true},
     email:{type:String, required:true,trim:true, unique:true},
     phone:{type:Number, min:1000000000, max:9999999999},
     password:{type:String,required:true, trim:true},
@@ -15,7 +17,8 @@ const client_schema= new mongoose.Schema({
             }
         }
     ],
-    join:{type:Date,default:Date.now}
+    join:{type:Date,default:Date.now},
+    is_admin:{type:Boolean,default:0}
 })
 
 // generation token
