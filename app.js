@@ -4,6 +4,7 @@ import {join} from 'path';
 import home from './routes/home.js';
 import Event from './routes/event.js';
 import login from './routes/login.js';
+import registration from './routes/registration.js';
 const app=express();
 
 const port=process.env.PORT || 5000;
@@ -22,6 +23,7 @@ app.use('/',home);
 // router for event page content
 app.use('/events', Event);
 // router for login page content
+app.use('/registration',registration);
 app.use('/login',login);
 
 app.listen(port, ()=>{
