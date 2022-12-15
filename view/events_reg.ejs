@@ -1,0 +1,39 @@
+<%- include ('./partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- navbar -->
+    <nav class=" navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="/admin/admin_home/events" class="nav-link active">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Pending messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/logout" class="btn btn-sm btn-danger float-end">log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h3 class="alert alert-center">event lists</h3>
+
+
+
+
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.js"></script>
+    </body>
+
+    </html>

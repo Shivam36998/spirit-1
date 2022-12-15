@@ -3,8 +3,27 @@
     <!-- navbar -->
     <%- include('./partials/navbar.ejs') %>
 
-        <!-- drop your code here 👇👇👇👇-->
- 
-       <h1>login here</h1>
-        <!-- footer -->
+    <!-- drop your code here 👇👇👇👇-->
+        
+
+        <form method="post">
+            <div class="form_elm">
+                <label for="email">Email id</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form_elm">
+                <label for="password">Password</label>
+                <input type="password" name="password" required="true">
+            </div>
+            <div class="form_elm">
+                <button type="submit"> Log in</button>
+            </div>
+            
+            <div class="form_elm">
+                <h5>forgot password? <a href="/forgetpassword">click here</a> to reset</h5>
+            </div>
+
+        </form>
+
+<!-- footer -->
 <%- include('./partials/footer.ejs') %>
