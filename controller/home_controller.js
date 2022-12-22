@@ -1,8 +1,21 @@
+
+import dotenv from 'dotenv';
+dotenv.config();
 import client_model from "../model/cliend_model.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
+import Razorpay from 'razorpay'
 
+
+var instance = new Razorpay({
+    key_id: 'rzp_test_YJszVfQ6pfS8o9',
+    key_secret: 'y0BfQBSZH0rnVuNZ7RU0Z5oB'
+});
+
+
+
+// async..await is not allowed in global scope, must use a wrapper
 
 
 
@@ -54,36 +67,37 @@ class home_event {
             // link
             const link = `http://localhost:5000/reset-password/${result._id}/${token}`
             console.log(link);
-            const testAccount = await nodemailer.createTestAccount();
+            // const testAccount = await nodemailer.createTestAccount();
 
             const transporter = nodemailer.createTransport({
-                host: "smtp.ethereal.email",
-                port: 587,
-                secure: false, // true for 465, false for other ports
+                host: "smtp.zoho.com",
+                port: 465,
+                secure: true, // true for 465, false for other ports
                 auth: {
-                    user: testAccount.user, // generated ethereal user
-                    pass: testAccount.pass, // generated ethereal password
+                    user: "sp48840@gmail.com", // generated ethereal user
+                    pass: "hedmlqbxsoujvgvt", // generated ethereal password
                 },
             });
             const mailOption = {
                 from: 'sp48840@gmail.com', // sender address
-                to: 'suraj.patel.phe20@itbhu.ac.in', // list of receivers
+                to: 'suraj.patel.phe20@itbhu.ac.in',//result.email, // list of receivers
                 subject: "Hello ✔", // Subject line
                 text: `hey ${result.name} this is Team spirit please click the link below to reset your
                 password!! Thank you!!`, // plain text body
-                html:`${link}`, // html body
+                html: `${link}`, // html body
             };
 
-            transporter.sendMail(mailOption,function(error,info){
-                if(error){
-                    console.log(error.message);
-                    
-                }
-                else{
+            transporter.sendMail(mailOption, function (error, info) {
+                if (error) {
+                    console.log(error);
+
+                }//mrwddeyjdyqywkbh
+                else {
                     console.log('mail send successfully!!!');
-                    
+
                 }
             });
+
 
             res.send('password reset link has been sent to your email')
 
@@ -158,6 +172,41 @@ class home_event {
 
         }
     }
+
+
+    // payment related code
+
+
+    static creatOrer = (req, res) => {
+        console.log('create order request', req.body);
+        var options = {
+            amount: req.body.amount,  // amount in the smallest currency unit
+            currency: "INR",
+            receipt: "order_rcptid_11"
+        };
+        instance.orders.create(options, function (err, order) {
+            console.log(order);
+            res.send({ orderId: order.id })
+        });
+    }
+
+    static verifyOrder = (req, res) => {
+        let body = req.body.response.razorpay_order_id + "|" + req.body.response.razorpay_payment_id;
+
+        var crypto = require("crypto");
+        var expectedSignature = crypto.createHmac('sha256', 'y0BfQBSZH0rnVuNZ7RU0Z5oB')
+            .update(body.toString())
+            .digest('hex');
+        console.log("sig received ", req.body.response.razorpay_signature);
+        console.log("sig generated ", expectedSignature);
+        var response = { "signatureIsValid": "false" }
+        if (expectedSignature === req.body.response.razorpay_signature)
+            response = { "signatureIsValid": "true" }
+        // console.log('verify');
+
+        res.send(response);
+    }
+
 }
 
 

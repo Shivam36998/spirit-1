@@ -1,5 +1,5 @@
 const sessionSecret="mySecreat";
-const userEmail="suraj.patel.phe20@itbhu.ac.in";
+const userEmail="";
 const userPassword="Surajphe20@";
 
 

@@ -1,13 +1,14 @@
-import subscriber_model from "../../model/subscriber_model.js";
-const email=document.getElementById('email_sub');
-    const subscriber=document.getElementById('subscriber');
+const togglePassword = document.querySelector("#togglePassword");
+            const password = document.querySelector("#password");
 
-    subscriber.addEventListener('click',()=>{
-        console.log(email.value);
-        email.value=""
-    })
-    
+            togglePassword.addEventListener("click", function () {
+                // toggle the type attribute
+                console.log('clicked')
+                const type = password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
 
+                // toggle the icon
+                this.classList.toggle("fa-eye-slash");
+            });
 
-// console.log(result_from);
-
+        

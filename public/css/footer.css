@@ -118,7 +118,7 @@ font-family: 'Knewave', cursive;
 .footer .layer .foot_content .content .item .list a {
     text-decoration: none;
     font-family: 'Baloo 2', cursive;
-    line-height: 20px;
+    line-height: 5px;
     color: whitesmoke;
     font-weight: 500;
     transition: .4s all ease-in;

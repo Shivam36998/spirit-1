@@ -29,4 +29,14 @@ router.post('/forgetpassword',home_event.forgetPassword_verify);
 router.get('/reset-password/:id/:token',home_event.resetPassword);
 router.post('/reset-password/:id/:token',home_event.savePassword);
 
+
+// payment getway integration
+// router.get('/payments',(req,res)=>{
+//     res.render('razorpay');
+// })
+
+// router.post('create/orderId',home_event.creatOrer)
+// router.post('api/payment/verify',home_event.verifyOrder)
+
+
 export default router;

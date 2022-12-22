@@ -8,6 +8,7 @@ import home from './routes/home.js';
 import Event from './routes/event.js';
 import Connect_data from "./database/connect_db.js";
 import Admin from './routes/admin.js';
+import home_event from './controller/home_controller.js';
 import cookieParser from 'cookie-parser';
 const app=express();
 
@@ -37,13 +38,22 @@ app.set('view engine','ejs');
 app.use('/',home);
 // router for event page content
 app.use('/events', Event);
-// router for login page content
-app.use('/registration',registration);
-app.use('/login',login);
+
+// payments route
+
+app.get('/payments',(req,res)=>{
+    res.render('razorpay');
+})
+
+app.post('/create/orderId',home_event.creatOrer)
+app.post('/api/payment/verify',home_event.verifyOrder)
 
 // this is admin routes☠️☠️☠️
 app.use('/admin', Admin);
 // app.use('/admin_home', adm_home);
+
+
+
 
 
 

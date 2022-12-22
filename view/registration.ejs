@@ -9,7 +9,26 @@
             <div class="reg_layer">
                 <div class="main">
                     <div class="form_content">
-                        <h4>welcome</h4>
+
+                        <div class="welcome">
+                            Welcome to <span style="color: white;">Spirit</span><b style="color: red;">'2023</b>
+                        </div>
+                        <h3 class="head">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt.
+                        </h3>
+                        <article class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quia minus
+                            aliquid
+                            architecto odit corporis ut reprehenderit quos aperiam asperiores.</article>
+                        <div class="social">
+                            <h4 class="head">Or login with</h4>
+                            <a href="#" style="text-decoration: none;">
+                                <div class="google">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/archive/5/53/20221203181232%21Google_%22G%22_Logo.svg"
+                                        alt="google">
+                                    <h3>Google</h3>
+                                </div>
+                            </a>
+
+                        </div>
                     </div>
                     <div class="form_content main_form">
 
@@ -25,16 +44,16 @@
                                     <div class="form_elm">
                                         <label for="gender">Gender</label>
                                         <select name="gender" id="gender">
-                                            <option selected>Male</option>
-                                            <option value="Male">Male</option>
+                                            <option selected value="Male">Male</option>
+                                            <!-- <option value="Male">Male</option> -->
                                             <option value="Female">Female</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form_elm">
                                     <label for="email">Email id</label>
-                                    <input type="email" name="email" autocomplete="off" id="email" placeholder="example@gmail.com"
-                                        required>
+                                    <input type="email" name="email" autocomplete="off" id="email"
+                                        placeholder="example@gmail.com" required>
                                 </div>
                                 <div class="form_elm">
                                     <label for="phone">Phone number</label>
@@ -43,14 +62,14 @@
                                 <div class="combined">
                                     <div class="form_elm">
                                         <label for="college">College name</label>
-                                        <input id="college" list="colleges" autocomplete="on" type="text"
+                                        <input id="college" name="college" autocomplete="on" type="text"
                                             placeholder="College" />
                                     </div>
                                     <div class="form_elm">
                                         <label for="year">Year</label>
                                         <select name="gender" id="gender">
                                             <option selected value="1">First</option>
-                                            <option value="1">First</option>
+                                            <!-- <option value="1">First</option> -->
                                             <option value="2">Second</option>
                                             <option value="3">Third</option>
                                             <option value="4">Fourth</option>
@@ -69,11 +88,14 @@
                                     <input type="text" name="city" id="city">
                                 </div>
                                 <div class="form_elm">
-                                    <label for="password" autocomplete="new-password">Password</label>
+                                    <label for="password" autocomplete="current-password">Password<i class='bx bxs-low-vision' id="togglePassword"></i></label>
+                                    <!-- <i class="fa-solid fa-eye" id="togglePassword"></i> -->
                                     <input type="password" name="password" id="password" minlength="8" required>
+
                                 </div>
                                 <div class="form_elm">
                                     <button type="submit" id="submit">Creat account</button>
+                                    <h5>Already registered? <a href="/login">Click here</a> to login.</h5>
                                 </div>
                             </form>
                         </div>
@@ -81,15 +103,19 @@
                 </div>
             </div>
         </div>
+        <!-- <script src="/js/all.js"></script> -->
+        <script src="/js/logic.js"></script>
+        <script>
+            
+        </script>
+
+    </body>
+    </html>
 
 
 
 
 
 
+>>>>>>>>> Temporary merge branch 2
 
-
-
-
-        <!-- footer -->
-        <%- include('./partials/footer.ejs') %>
