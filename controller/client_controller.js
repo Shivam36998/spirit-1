@@ -6,17 +6,18 @@ class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
         try {
-            const { name,college, city, email, phone} = req.body;
+            const { name, gender, college, year, city, email, phone } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
-                res.render('greet',{'title':'spirit', message:'Email already exist!!'});
+                res.render('greet', { 'title': 'spirit', message: 'Email already exist!!' });
             }
             else {
                 const client_doc = new client_model({
                     name: name,
-                    // gender:gender,
-                    college:college,
-                    city:city,
+                    gender: gender,
+                    college: college,
+                    year: year,
+                    city: city,
                     email: email,
                     phone: phone,
                     password: hashPassword,
@@ -24,13 +25,13 @@ class data_collector {
                 })
                 const result = await client_doc.save();
                 // console.log(typeof(result.gender));
-                
+
 
                 const saved_Client = await client_model.findOne({ email: email });
                 // generate JWT token
                 // const token = jwt.sign({ userID: saved_Client._id }, process.env.JWT_SECREAT_KEY, { expiresIn: '5d' });
                 // console.log(token);
-                
+
 
 
             }
@@ -60,26 +61,30 @@ class data_collector {
             const result = await client_model.findOne({ email: email });
             if (result != null) {
                 const isClient = await bcrypt.compare(password, result.password)
-                token=await result.generateAuthToken();
-                res.cookie("spirit",token,{
-                    expiresIn:"5d",
-                    httpOnly:true
+                token = await result.generateAuthToken();
+                res.cookie("spirit", token, {
+                    expiresIn: "5d",
+                    httpOnly: true
                 })
                 if (result.email == email && isClient) {
                     // generate token
                     // const token = jwt.sign({ userID: result._id }, process.env.JWT_SECREAT_KEY, { expiresIn: '5d' });
                     // console.log(token);
 
-                    
-                    res.send(`hey ${result.name} welcome to spirit family
-                    this is your dashboard.`);
+
+                    // res.send(`hey ${result.name} welcome to spirit family
+                    // this is your dashboard.`);
+
+                    res.render('login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!` });
                 }
                 else {
-                    res.send('worg emailid or password');
+                    res.render('login', { 'title': `Login failed ☹️`, messages: `Wrong EmailId or Password` });
+
                 }
             }
             else {
-                res.send('you are not a registerd user')
+                res.render('login', { 'title': `Oops! You are not registered!`, messages: `You are not a registered user!` });
+
             }
         } catch (err) {
             console.log(err);
@@ -87,25 +92,25 @@ class data_collector {
         }
     }
 
-    static client_logout= async(req,res)=>{
-        try{
-            req.client.tokens=req.client.tokens.filter((token)=>{
-                return token.token !=req.token
+    static client_logout = async (req, res) => {
+        try {
+            req.client.tokens = req.client.tokens.filter((token) => {
+                return token.token != req.token
             })
 
-        res.clearCookie("spirit");
-        console.log('log out successfully');
-        res.redirect('/login');
-        
-        
+            res.clearCookie("spirit");
+            console.log('log out successfully');
+            res.redirect('/login');
 
-        await req.client.save();
+
+
+            await req.client.save();
         }
-        catch(err){
+        catch (err) {
             console.log(err);
-            
+
         }
-        
+
     }
 
     // static creat_subscriber= async (req,res)=>{
@@ -152,7 +157,7 @@ class data_collector {
     //         }
     //     }catch(error){
     //         console.log(error);
-            
+
     //     }
     // }
 }

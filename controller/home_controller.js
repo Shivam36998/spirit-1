@@ -54,7 +54,9 @@ class home_event {
             // make sure user exist with this email
             const result = await client_model.findOne({ email: email });
             if (!result) {
-                res.send('user not registered');
+                //res.send('user not registered');
+                res.render('forget-password', { messages: 'user not registered' })
+
                 return;
             }
             // res.send(email);
@@ -99,7 +101,9 @@ class home_event {
             });
 
 
-            res.send('password reset link has been sent to your email')
+            //res.send('password reset link has been sent to your email')
+            res.render('forget-password', { messages: 'password reset link has been sent to your email' })
+
 
         } catch (error) {
             console.log(error);
