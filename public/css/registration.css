@@ -1,234 +1,271 @@
+/* footer design */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Baloo+Bhaina+2:wght@400;500&family=Knewave&family=Merriweather:wght@300;400&family=PT+Serif&family=Varela+Round&display=swap');
+
+/* 
+font-family: 'Baloo 2', cursive;
+font-family: 'Baloo Bhaina 2', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Knewave', cursive;
+
+*/
 *{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59,130,246,0.5);
-  --tw-ring-offset-shadow: 0 0 transparent;
-  --tw-ring-shadow: 0 0 transparent;
-}
-
-body,html{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: #f1f1f1;
-  overflow-x: hidden;
-}
-.home-button{
-  transition-duration: .3s;
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  text-transform: uppercase;
-  color: rgba(255,255,255,1);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  line-height: 1.625;
-  font-size: .875rem;
-  font-weight: 700;
-  text-decoration: none;
-  outline: none
-}
-.home-button:hover{
-  color: rgb(54, 71, 66);
-}
-.main-section{
-  width: 100%;
-  position: relative;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  min-height: 100vh;
-  height: 100%;
-}
-.back-image{
-background-image: url(../image/doctor-5135039.svg);
-width: 100%;
-top: 0;
-position: absolute;
-height: 100%;
-background-repeat: no-repeat;
-background-color: rgb(45, 103, 102);
-background-position:center;
-}
-.spirit-logo{
-  text-transform: uppercase;
-  color: rgba(75,85,99,1);
-  text-align: center;
-  margin-bottom: -0.25rem;
-  margin-top: 1.5rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.logo{
-  height: 8rem;
-  overflow-clip-margin: content-box;
-  overflow: clip;
-}
-.navbar{
-z-index: 50;
-width: 100%;
-top: 0;
-position: absolute;
-padding: 2rem 2.5rem 0 2.5rem;
-display: block;
-}
-
-a{
-text-transform: uppercase;
-color: white;
-padding: 0.5rem 0;
-margin-left: 0.5rem;
-line-height: 1.625;
-font-size: .875rem;
-font-weight: 700;
-}
-
-.flex-container{
-position: relative;
-padding-left: 1rem;
-padding-right: 1rem;
-margin-left: auto;
-margin-right: auto;
-height: 100%;
-width: 100%;
-}
-.container
-{
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 100%;
-  display: flex;
-  display: flex;
- align-items: center;
- justify-content: center;
-}
-
-@media (min-width: 768px){
-.flex-container {
-    max-width: 768px;
-}
-}
-@media (min-width: 640px){
-.flex-container {
-  max-width: 640px;
-}
-}
-
-.align-items-center {
-display: flex;
-align-items: center;
-justify-content: center;
-/* text-align: center; */
-}
-
-.signup-form-container
-{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 1.5rem;
-  border-radius: 0.5rem;
-  background-color: rgba(243,244,246,1);
-  flex-wrap: wrap;
-}
-
-.google-button{
-  text-transform: uppercase;
-  color: rgba(31,41,55,1);
-  --tw-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
-  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-  padding: 0.5rem 1rem;
-  margin-bottom: 0.25rem;
-  margin-right: 0.25rem;
-  font-size: .75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  align-items: center;
-  display: inline-flex;
-  border-radius: 0.25rem;
-  background-color: rgba(255,255,255,1);
-  border: none;
-}
-.google-button:hover {
-  cursor: pointer;
-  --tw-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
-  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-}
-.input-field
-{
-  --tw-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
-  box-sizing: border-box;
-  width: calc(100% - 25px);
-  /* width: 100%; */
-  color: rgba(55,65,81,1);
-  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  font-size: .875rem;
-  line-height: 1.25rem;
-  border: 1px solid rgb(168, 168, 168);
-  outline: none;
-}
-
-.signup-button{
-  cursor: pointer;
-  width: 100%;
-  transition-duration: .15s;
-  transition-timing-function: linear;
-  transition-property: all;
-  text-transform: uppercase;
-  color: white;
-  font-size:0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  padding:0.75rem 1.5rem;
-  border-radius: 0.25rem;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border: none;
-  background-color: rgb(56, 102, 189);
-  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-}
-.signup-button:hover{
-  color: rgba(31,41,55,1);
-  background-color: rgba(255,255,255,1);
-  --tw-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
-  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow);
-}
-.login-button{
-  cursor: pointer;
-  font-size: .875rem;
-  line-height: 1.25rem;
-  color: white;
-  padding: 13px;
-  border-radius: 0.25rem;
-  border: none;
-  outline: none;
-  background-color: rgb(56, 189, 149);  
-}
-
-footer{
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  padding-bottom: 1.5rem;
-  background-color: rgb(45, 103, 102);
-}
-
-footer>div{
-  width: 100%;
-  margin:0 auto;
-  padding: 0 1rem;
-}
-.footer-container{
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
+    padding: 0;
+    margin: 0;
+    font-family: 'Baloo Bhaina 2', cursive;
 
 }
+.registration{
+    position: relative;
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/image/reg_back.jpg') no-repeat center center/cover;
+}
+
+.registration .reg_layer{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(31, 31, 38, 0.872);
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.registration .reg_layer .main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.main .form_content{
+    display: flex;
+    margin: 10px 2px;
+    align-items: center;
+    justify-content: center;
+    /* height: 90vh; */
+    width: 40%;
+    /* background: white; */
+    flex-direction: column;
+}
+/* first container */
+
+.main .form_content .welcome{
+    font-size: 35px;
+    color:rgb(35, 126, 244);
+    font-weight: bold;
+    text-align: center;
+    
+}
+.main .form_content .head{
+    color: white;
+    text-align: center;
+    color: greenyellow;
+    /* font-size: 20px; */
+
+}
+.main .form_content .text{
+    color: white;
+    text-align: center;
+    padding:10px;
+}
+
+.form_content .social .google{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: white;
+    padding: 0px 10px;
+    border-radius: 4px;
+}
+.form_content .social .google h3{
+    padding:2px 4px 0px 4px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+.main .main_form{
+    background-color: white;
+    padding: 10px 20px;
+
+}
+
+.form_content .intro_text{
+    color: rgb(38, 121, 247);
+    font-weight: 600;
+}
+
+.form_content .form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rebeccapurple; */
+    /* border: 1px solid white; */
+}
+
+.form .combined{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+ .registration .form .form_elm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.registration .form_elm  #togglePassword{
+    margin-left: 120px;
+    cursor: pointer;
+}
+
+
+.registration .form_elm label{
+    color: black;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.registration .form_elm input, select{
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 4px;
+    font-size: 15px;
+    color: black;
+    background: transparent;
+    border-bottom: 1.5px solid black;
+    /* border-color: black; */
+}
+
+.registration select{
+    color: black;
+}
+
+.registration option:checked{
+    color:rgb(255, 255, 255);
+    background-color: rgb(19, 103, 249);
+  }
+
+.registration ::placeholder {
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+ .registration :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: black;
+  }
+  
+ .registration ::-ms-input-placeholder { /* Microsoft Edge */
+   color: black;
+  }
+
+
+ .registration .form_elm #submit{
+    transition: .5s all ease-out;
+    background: rgb(38, 121, 247);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 4px 0px;
+  }
+ .registration .form_elm #submit:hover{
+    cursor: pointer;
+    color: white;
+    background:rgb(8, 66, 154) ;
+  }
+
+
+
+  /* responsivness css */
+
+
+  @media screen and (max-width: 809px) {
+
+    .main .form_content .welcome{
+        font-size: 30px;
+    }
+
+    .main .form_content .text{
+        font-size: 12px;
+    }
+
+    .form_content .social .google{
+        padding: 0px 8px;
+    }
+
+
+
+
+
+
+  }
+
+
+  @media screen and (max-width: 786px) {
+    .registration .reg_layer .main{
+        flex-direction: column;
+    }
+
+    .main .form_content{
+        margin: 5px 10px;
+        width: 90%;
+    }
+    .main .form_content .welcome{
+        font-size: 40px;
+    }
+
+    .main .form_content .text{
+        font-size: 15px;
+    }
+
+    .form_content form{
+        width: 80%;
+    }
+
+    
+
+
+
+
+  }
+
+  @media screen and (max-width: 452px) {
+
+    .main .form_content .welcome{
+        font-size: 25px;
+    }
+    .main .form_content .head{
+        font-size: 18px;
+        line-height: 20px;
+    
+    }
+    .main .form_content .text{
+        line-height: 20px;
+    }
+  }
+
+
+
+
