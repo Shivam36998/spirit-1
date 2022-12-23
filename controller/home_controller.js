@@ -12,6 +12,9 @@ class home_event{
     static My_registration=(req,res)=>{
         res.render('registration',{'title':'welcome!'})
     }
+    static My_payment_dashboard=(req,res)=>{
+        res.render('payment_dashboard',{'title':'welcome!'})
+    }
 }
 
 
