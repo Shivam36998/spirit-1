@@ -47,6 +47,9 @@ class home_event {
     static forgetPassword = (req, res) => {
         res.render('forget-password')
     }
+    static My_payment_dashboard=(req,res)=>{
+        res.render('payment_dashboard',{'title':'welcome!'})
+    }
 
     static forgetPassword_verify = async (req, res) => {
         try {
