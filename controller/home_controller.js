@@ -79,8 +79,8 @@ class home_event {
                 port: 465,
                 secure: true, // true for 465, false for other ports
                 auth: {
-                    user: "sp48840@gmail.com", // generated ethereal user
-                    pass: "hpepzgtpgvscgfql", // generated ethereal password//hpepzgtpgvscgfql
+                    user:process.env.userMail,// generated ethereal user
+                    pass: process.env.userPassword// generated ethereal password//hpepzgtpgvscgfql
 
                 },
             });
