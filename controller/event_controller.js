@@ -1,4 +1,3 @@
-import { render } from "ejs";
 
 class event_handler{
     static my_event=(req,res)=>{

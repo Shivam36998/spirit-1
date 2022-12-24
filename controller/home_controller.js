@@ -55,7 +55,7 @@ class home_event {
             const result = await client_model.findOne({ email: email });
             if (!result) {
                 //res.send('user not registered');
-                res.render('forget-password', { messages: 'user not registered' })
+                res.render('forget-password', { messages: 'User not registered' })
 
                 return;
             }
@@ -72,17 +72,18 @@ class home_event {
             // const testAccount = await nodemailer.createTestAccount();
 
             const transporter = nodemailer.createTransport({
-                host: "smtp.zoho.com",
+                host: "smtp.gmail.com",
                 port: 465,
                 secure: true, // true for 465, false for other ports
                 auth: {
                     user: "sp48840@gmail.com", // generated ethereal user
-                    pass: "hedmlqbxsoujvgvt", // generated ethereal password
+                    pass: "hpepzgtpgvscgfql", // generated ethereal password//hpepzgtpgvscgfql
+
                 },
             });
             const mailOption = {
-                from: 'sp48840@gmail.com', // sender address
-                to: 'suraj.patel.phe20@itbhu.ac.in',//result.email, // list of receivers
+                from:'sp48840@gmail.com', // sender address
+                to: result.email,//result.email, // list of receivers
                 subject: "Hello ✔", // Subject line
                 text: `hey ${result.name} this is Team spirit please click the link below to reset your
                 password!! Thank you!!`, // plain text body
@@ -95,14 +96,43 @@ class home_event {
 
                 }//mrwddeyjdyqywkbh
                 else {
-                    console.log('mail send successfully!!!');
+                    console.log('Mail send successfully!!');
 
                 }
+                 const transporter = nodemailer.createTransport({
+                host: "smtp.gmail.com",
+                port: 465,
+                secure: true, // true for 465, false for other ports
+                auth: {
+                    user: "sp48840@gmail.com", // generated ethereal user
+                    pass: "hpepzgtpgvscgfql", // generated ethereal password//hpepzgtpgvscgfql
+
+                },
+            });
+            const mailOption = {
+                from:'sp48840@gmail.com', // sender address
+                to: result.email,//result.email, // list of receivers
+                subject: "Hello ✔", // Subject line
+                text: `hey ${result.name} this is Team spirit please click the link below to reset your
+                password!! Thank you!!`, // plain text body
+                html: `${link}`, // html body
+            };
+
+            transporter.sendMail(mailOption, function (error, info) {
+                if (error) {
+                    console.log(error);
+
+                }//mrwddeyjdyqywkbh
+                else {
+                    console.log('Mail send successfully!!');
+
+                }
+            });
             });
 
 
             //res.send('password reset link has been sent to your email')
-            res.render('forget-password', { messages: 'password reset link has been sent to your email' })
+            res.render('forget-password', { messages: 'Password reset link has been sent to your Email' })
 
 
         } catch (error) {
@@ -146,7 +176,7 @@ class home_event {
 
         const result = await client_model.findOne({ _id: id });
         if (!result) {
-            res.send('invalid id....')
+            res.render('reset-password', { email:"",messages:"Invalid id.." });
             return;
         }
 
@@ -157,7 +187,7 @@ class home_event {
             console.log('paylod verifyed');
 
             if (password !== password2) {
-                res.send('password not matched')
+                res.render('reset-password', { email:result.email,messages:"Both passwords should be same!" });
                 return
 
             }
@@ -165,7 +195,7 @@ class home_event {
             // console.log(result.password);
 
             const data = await client_model.findByIdAndUpdate(id, { password: hashPassword });
-            res.send('password reset successfully')
+            res.render('reset-password', { email:result.email,messages:"Password reset successful!" });
             // console.log(data.password);
 
 
