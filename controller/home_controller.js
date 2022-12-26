@@ -87,10 +87,17 @@ class home_event {
             const mailOption = {
                 from:'sp48840@gmail.com', // sender address
                 to: result.email,//result.email, // list of receivers
-                subject: "Hello ✔", // Subject line
+                subject: "Password reset", // Subject line
                 text: `hey ${result.name} this is Team spirit please click the link below to reset your
                 password!! Thank you!!`, // plain text body
-                html: `${link}`, // html body
+                html: `
+                <h3> Hey <strong style="color:white; background:blue;"> ${result.name} </strong>, this is Team Spirit.</h3>
+                <br>
+                <h5>We recived a request to reset your password for account.</h5><br>
+                <p style="color:blue;"> Click the link below 👇👇 to reset your password!</p><br>
+                ${link}
+                
+                `, // html body
             };
 
             transporter.sendMail(mailOption, function (error, info) {
@@ -102,35 +109,6 @@ class home_event {
                     console.log('Mail send successfully!!');
 
                 }
-                 const transporter = nodemailer.createTransport({
-                host: "smtp.gmail.com",
-                port: 465,
-                secure: true, // true for 465, false for other ports
-                auth: {
-                    user: "sp48840@gmail.com", // generated ethereal user
-                    pass: "hpepzgtpgvscgfql", // generated ethereal password//hpepzgtpgvscgfql
-
-                },
-            });
-            const mailOption = {
-                from:'sp48840@gmail.com', // sender address
-                to: result.email,//result.email, // list of receivers
-                subject: "Hello ✔", // Subject line
-                text: `hey ${result.name} this is Team spirit please click the link below to reset your
-                password!! Thank you!!`, // plain text body
-                html: `${link}`, // html body
-            };
-
-            transporter.sendMail(mailOption, function (error, info) {
-                if (error) {
-                    console.log(error);
-
-                }//mrwddeyjdyqywkbh
-                else {
-                    console.log('Mail send successfully!!');
-
-                }
-            });
             });
 
 
