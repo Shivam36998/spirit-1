@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv';
 dotenv.config();
 import client_model from "../model/cliend_model.js";
@@ -7,11 +6,11 @@ import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
 import Razorpay from 'razorpay'
 
-
-var instance = new Razorpay({
-    key_id: 'rzp_test_YJszVfQ6pfS8o9',
-    key_secret: 'y0BfQBSZH0rnVuNZ7RU0Z5oB'
+const instance = new Razorpay({
+    key_id:process.env.key_id,
+    key_secret: process.env.key_secret//'y0BfQBSZH0rnVuNZ7RU0Z5oB'
 });
+
 
 
 
@@ -21,34 +20,34 @@ var instance = new Razorpay({
 
 class home_event {
     static My_home = (req, res) => {
-        res.render('home', { 'title': 'Home' });
+        res.render('pages/home', { 'title': 'Home' });
     }
     static My_gallery = (req, res) => {
-        res.render('gallery', { 'title': 'Gallery' })
+        res.render('pages/gallery', { 'title': 'Gallery' })
     }
 
     static My_login = (req, res) => {
-        res.render('login', { 'title': 'login here' })
+        res.render('registration/login', { 'title': 'login here' })
     }
     static My_registration = (req, res) => {
-        res.render('registration', { 'title': 'welcome!' })
+        res.render('registration/registration', { 'title': 'welcome!' })
     }
 
     static speakers = (req, res) => {
-        res.render('speakers', { 'title': 'spirit 2023: speakers!' });
+        res.render('pages/speakers', { 'title': 'spirit 2023: speakers!' });
     }
     static about = (req, res) => {
-        res.render('about', { 'title': 'spirit 2023: know more about us' })
+        res.render('pages/about', { 'title': 'spirit 2023: know more about us' })
     }
     static sponsors = (req, res) => {
-        res.render('sponsors', { 'title': 'our sponsors' });
+        res.render('pages/sponsors', { 'title': 'our sponsors' });
     }
 
     static forgetPassword = (req, res) => {
-        res.render('forget-password')
+        res.render('registration/forget-password')
     }
     static My_payment_dashboard=(req,res)=>{
-        res.render('payment_dashboard',{'title':'welcome!'})
+        res.render('payments/payment_dashboard',{'title':'welcome!'})
     }
 
     static forgetPassword_verify = async (req, res) => {
@@ -58,7 +57,7 @@ class home_event {
             const result = await client_model.findOne({ email: email });
             if (!result) {
                 //res.send('user not registered');
-                res.render('forget-password', { messages: 'User not registered' })
+                res.render('registration/forget-password', { messages: 'User not registered' })
 
                 return;
             }
@@ -113,7 +112,7 @@ class home_event {
 
 
             //res.send('password reset link has been sent to your email')
-            res.render('forget-password', { messages: 'Password reset link has been sent to your Email' })
+            res.render('registration/forget-password', { messages: 'Password reset link has been sent to your Email' })
 
 
         } catch (error) {
@@ -144,7 +143,7 @@ class home_event {
 
             // console.log('baba');
 
-            res.render('reset-password', { email: result.email });
+            res.render('registration/reset-password', { email: result.email });
         } catch (error) {
             console.log(error);
 
@@ -157,7 +156,7 @@ class home_event {
 
         const result = await client_model.findOne({ _id: id });
         if (!result) {
-            res.render('reset-password', { email:"",messages:"Invalid id.." });
+            res.render('registration/reset-password', { email:"",messages:"Invalid id.." });
             return;
         }
 
@@ -168,7 +167,7 @@ class home_event {
             console.log('paylod verifyed');
 
             if (password !== password2) {
-                res.render('reset-password', { email:result.email,messages:"Both passwords should be same!" });
+                res.render('registration/reset-password', { email:result.email,messages:"Both passwords should be same!" });
                 return
 
             }
@@ -176,7 +175,7 @@ class home_event {
             // console.log(result.password);
 
             const data = await client_model.findByIdAndUpdate(id, { password: hashPassword });
-            res.render('reset-password', { email:result.email,messages:"Password reset successful!" });
+            res.render('registration/reset-password', { email:result.email,messages:"Password reset successful!" });
             // console.log(data.password);
 
 

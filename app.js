@@ -42,7 +42,7 @@ app.use('/events', Event);
 // payments route
 
 app.get('/payments',(req,res)=>{
-    res.render('razorpay');
+    res.render('payments/razorpay');
 })
 
 app.post('/create/orderId',home_event.creatOrer)

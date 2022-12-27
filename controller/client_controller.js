@@ -44,15 +44,15 @@ class data_collector {
         }
     }
 
-    static fatch_client = async (req, res) => {
-        try {
-            const result = await client_model.find();
-            res.render('admin', { 'title': 'Admin Pannel', data: result });
-        } catch (error) {
-            console.log(error);
+    // static fatch_client = async (req, res) => {
+    //     try {
+    //         const result = await client_model.find();
+    //         res.render('admin', { 'title': 'Admin Pannel', data: result });
+    //     } catch (error) {
+    //         console.log(error);
 
-        }
-    }
+    //     }
+    // }
 
     static client_login = async (req, res) => {
         try {
@@ -75,7 +75,7 @@ class data_collector {
                     // res.send(`hey ${result.name} welcome to spirit family
                     // this is your dashboard.`);
 
-                    res.render('login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!` });
+                    res.render('registration/login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!` });
                 }
                 else {
                     res.render('login', { 'title': `Login failed ☹️`, messages: `Wrong EmailId or Password` });

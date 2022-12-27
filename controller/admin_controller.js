@@ -10,7 +10,7 @@ import bcrypt from 'bcrypt';
 class admin{
 static adm_login= async(req,res)=>{
     try{
-        res.render('admin_login',{'title':'login admin'});
+        res.render('admin/admin_login',{'title':'login admin'});
     }
     catch(error){
         console.log(error);
@@ -27,21 +27,21 @@ static admin_verify=async(req,res)=>{
             const passwordMatch=await bcrypt.compare(password,result.password)
             if(passwordMatch){
                 if(result.is_admin===false){
-                    res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password🫤'});
+                    res.render('admin/admin_login',{'title':'login admin', messages:'Wrong email id or password🫤'});
                 }
                 else{
                     req.session.client_id=result._id;
-                    res.redirect('/admin/admin_home');
+                    res.redirect('/admin');
                     
                 }
             }
             else{
-                res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
+                res.render('admin/admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
             }
            
         }
         else{
-            res.render('admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
+            res.render('admin/admin_login',{'title':'login admin', messages:'Wrong email id or password 🫤'});
             
         }
     }catch(err){
@@ -56,7 +56,7 @@ static adminHome=async(req,res)=>{
     try{ 
         const all_result= await client_model.find();
 
-        res.render('admin',{'title':'welcome to admin pannel', data:all_result});
+        res.render('admin/admin',{'title':'welcome to admin pannel', data:all_result});
     }catch(error){
         console.log(error);
         
@@ -66,7 +66,7 @@ static adminHome=async(req,res)=>{
 static events_reg= async(req,res)=>{
     try{
 
-        res.render('events_reg',{'title':'all events'})
+        res.render('admin/events_reg',{'title':'all events'})
     }catch(error){
         console.log(error);
         
