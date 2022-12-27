@@ -10,6 +10,7 @@ import Connect_data from "./database/connect_db.js";
 import Admin from './routes/admin.js';
 import home_event from './controller/home_controller.js';
 import cookieParser from 'cookie-parser';
+import paymentRout from './routes/payments.js'
 const app=express();
 
 const port=process.env.PORT || 5000;
@@ -41,12 +42,10 @@ app.use('/events', Event);
 
 // payments route
 
-app.get('/payments',(req,res)=>{
-    res.render('payments/razorpay');
-})
+app.use('/payments',paymentRout)
 
-app.post('/create/orderId',home_event.creatOrer)
-app.post('/api/payment/verify',home_event.verifyOrder)
+// app.post('/create/orderId',home_event.creatOrer)
+// app.post('/api/payment/verify',home_event.verifyOrder)
 
 // this is admin routes☠️☠️☠️
 app.use('/admin', Admin);

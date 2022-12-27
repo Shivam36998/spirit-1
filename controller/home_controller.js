@@ -4,12 +4,7 @@ import client_model from "../model/cliend_model.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
-import Razorpay from 'razorpay'
 
-const instance = new Razorpay({
-    key_id:process.env.key_id,
-    key_secret: process.env.key_secret//'y0BfQBSZH0rnVuNZ7RU0Z5oB'
-});
 
 
 
@@ -186,41 +181,6 @@ class home_event {
 
         }
     }
-
-
-    // payment related code
-
-
-    static creatOrer = (req, res) => {
-        console.log('create order request', req.body);
-        var options = {
-            amount: req.body.amount,  // amount in the smallest currency unit
-            currency: "INR",
-            receipt: "order_rcptid_11"
-        };
-        instance.orders.create(options, function (err, order) {
-            console.log(order);
-            res.send({ orderId: order.id })
-        });
-    }
-
-    static verifyOrder = (req, res) => {
-        let body = req.body.response.razorpay_order_id + "|" + req.body.response.razorpay_payment_id;
-
-        var crypto = require("crypto");
-        var expectedSignature = crypto.createHmac('sha256', 'y0BfQBSZH0rnVuNZ7RU0Z5oB')
-            .update(body.toString())
-            .digest('hex');
-        console.log("sig received ", req.body.response.razorpay_signature);
-        console.log("sig generated ", expectedSignature);
-        var response = { "signatureIsValid": "false" }
-        if (expectedSignature === req.body.response.razorpay_signature)
-            response = { "signatureIsValid": "true" }
-        // console.log('verify');
-
-        res.send(response);
-    }
-
 }
 
 
