@@ -78,12 +78,12 @@ class data_collector {
                     res.render('registration/login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!` });
                 }
                 else {
-                    res.render('login', { 'title': `Login failed ☹️`, messages: `Wrong EmailId or Password` });
+                    res.render('registration/login', { 'title': `Login failed ☹️`, messages: `Wrong EmailId or Password` });
 
                 }
             }
             else {
-                res.render('login', { 'title': `Oops! You are not registered!`, messages: `You are not a registered user!` });
+                res.render('registration/login', { 'title': `Oops! You are not registered!`, messages: `You are not a registered user!` });
 
             }
         } catch (err) {

@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
 const paymentDetailsSchema = new mongoose.Schema({
+	name:{type:String},
+	email:{type:String},
 	orderId: {
 		type: String,
 		required: true
@@ -20,9 +22,7 @@ const paymentDetailsSchema = new mongoose.Schema({
 	currency: {
 		type: String
 	},
-	createdAt: {
-		type: Date
-	},
+	join: {type:Date,default:Date.now},
 	status: {
 		type: String
 	}

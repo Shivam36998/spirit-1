@@ -11,6 +11,7 @@ import Admin from './routes/admin.js';
 import home_event from './controller/home_controller.js';
 import cookieParser from 'cookie-parser';
 import paymentRout from './routes/payments.js'
+import authUser from './middleware/authUser.js';
 const app=express();
 
 const port=process.env.PORT || 5000;
@@ -42,7 +43,7 @@ app.use('/events', Event);
 
 // payments route
 
-app.use('/payments',paymentRout)
+app.use('/payments',authUser,paymentRout)
 
 // app.post('/create/orderId',home_event.creatOrer)
 // app.post('/api/payment/verify',home_event.verifyOrder)

@@ -7,6 +7,10 @@ import Payment_model from '../model/payment_detail.js'
 import { nanoid } from 'nanoid';
 import crypto from 'crypto'
 import payment_model from '../model/payment_detail.js';
+import easyinvoice from 'easyinvoice';
+import fs from 'fs';
+import jwt from 'jsonwebtoken';
+import client_model from '../model/cliend_model.js';
 
 const router = express.Router();
 
@@ -40,9 +44,18 @@ router.post('/order', function (req, res, next) {
     }
     razorPayInstance.orders.create(params)
         .then(async (response) => {
+            // user details
+            const token = req.cookies.spirit;
+            const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
+            const clint_detail=await client_model.findOne({_id:verifyUser._id})
+
+           ////////////////// 
+
             const razorpayKeyId = process.env.key_id
             // Save orderId and other payment details
             const payment_data = new Payment_model({
+                name:clint_detail.name,
+                email:clint_detail.email,
                 orderId: response.id,
                 receiptId: response.receipt,
                 amount: response.amount,
@@ -89,9 +102,15 @@ router.post('/verify', async function (req, res, next) {
         console.log('hii');
         // if same, then find the previosuly stored record using orderId,
         // and update paymentId and signature, and set status to paid.
+        // 
+        const token = req.cookies.spirit;
+        const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
+        const clint_detail=await client_model.findOne({_id:verifyUser._id})
+        // 
         const save_payment = await payment_model.findOneAndUpdate(
             { orderId: req.body.razorpay_order_id },
-            {
+            {   Name:clint_detail.name,
+                email:clint_detail.email,
                 paymentId: req.body.razorpay_payment_id,
                 signature: req.body.razorpay_signature,
                 status: "paid"
@@ -116,7 +135,28 @@ router.post('/verify', async function (req, res, next) {
             console.log('not fount');
 
         } else {
-            res.render('payments/success',{paymentDetail:save_payment})
+            // Create your invoice! Easy!
+            //  token = req.cookies.spirit;
+            //  verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
+           const  client = await client_model.findOneAndUpdate({ _id: verifyUser._id }
+            ,{
+                payment_status:"paid",
+                paymentId: req.body.razorpay_payment_id,
+                signature: req.body.razorpay_signature,
+            });
+            
+
+           
+            // easyinvoice.createInvoice(data,async function (result) {
+            // The response will contain a base64 encoded PDF file
+            // console.log('PDF base64 string: ', result.pdf);
+            // await fs.writeFileSync("invoice.pdf", result.pdf,'base64')
+
+            // Now this result can be used to save, download or render your invoice
+            // Please review the documentation below on how to do this
+            // });
+
+            res.render('payments/success', { paymentDetail: save_payment })
         }
     } else {
         res.render('payments/fail', {
