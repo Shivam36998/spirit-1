@@ -137,6 +137,7 @@ class home_event {
             // console.log(paylod);
 
             // console.log('baba');
+        
 
             res.render('registration/reset-password', { email: result.email });
         } catch (error) {

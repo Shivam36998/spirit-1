@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 import express from "express";
 import cors from 'cors';
+import flash from 'express-flash';
 // we use this module to connect the route path
 import {join} from 'path';  
 import home from './routes/home.js';
@@ -29,6 +30,7 @@ app.use(express.urlencoded({extended:false}));
 
 // core policy
 app.use(cors());
+// app.use(flash());
 
 // we can use cookie-parser as a middleware
 app.use(cookieParser());

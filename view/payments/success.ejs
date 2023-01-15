@@ -6,10 +6,10 @@
 			<div class="card-body">
 				<p class="card-text">Thank you for contributing to us. Uparwala tumhara bhala kare.</p>
 
-				<dl class="row mt-2">
+				<div class="box-1">
 
-					<dt class="col-sm-3">Name</dt>
-					<dd class="col-sm-9" id="orderId"><%- paymentDetail.name %>  </dd>
+					<div class="col-sm-3">Name</div>
+					<div class="col-sm-9 user_detail" id="orderId"><%- paymentDetail.name %>  </div>
 					<dt class="col-sm-3">Email Id</dt>
 					<dd class="col-sm-9" id="orderId"><%- paymentDetail.email %>  </dd>
 					<dt class="col-sm-3">Order ID</dt>
@@ -26,9 +26,21 @@
 
 					<dt class="col-sm-3">Created at</dt>
 					<dd class="col-sm-9"><%- paymentDetail.join %> </dd>
-				</dl>
+				</div>
 
+
+				<style>
+					.user_detail{
+						padding: 3px 10px;
+						border: 1px solid black;
+						width: 40%;
+
+					}
+				</style>
 				<a href="/" type="button" class="btn btn-primary">Go Home</a>
+				<a href="/" download="invoice.pdf">
+					downlode
+				</a>
 			</div>
 		</div>
 	</div>

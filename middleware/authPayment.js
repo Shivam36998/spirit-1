@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import client_model from "../model/cliend_model.js";
+import alert from "alert";
 
 const authPayment = async (req, res, next) => {
     try {
@@ -9,8 +10,10 @@ const authPayment = async (req, res, next) => {
             res.send("please login before payment")
         } else {
             const client = await client_model.findOne({ _id: verifyUser._id });
-            if(client.payment_status=="unpaid"){
-                res.send("first go to payment")
+            if (client.payment_status == "unpaid") {
+               
+               res.redirect('/payments')
+                
             }
         }
 

@@ -17,6 +17,9 @@
                         <a href="/admin/admin_home/events" class="nav-link active">Events</a>
                     </li>
                     <li class="nav-item">
+                        <a href="/admin/admin_home" class="nav-link active">Registrations</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link active">Pending messages</a>
                     </li>
                     <li class="nav-item">
@@ -32,17 +35,22 @@
 
     <div class="container">
         <div class="row data-box">
-            <div class="data-table col-sm-8 mt-4">
+            <div class="data-table table-responsive  col-sm-12 mt-4">
                 <h3 class="head-text text-center alert alert-success">Registered client</h3>
-                <table class="table table-striped table-hover">
+                <table class="table table-bordered border-dark table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
+                            <th class="_head" scope="col">#</th>
+                            <th class="" scope="col" style="background:#3D4D5A; color:white;">Name</th>
+                            <th class="" scope="col" style="background:#795548; color:white;">Email</th>
+                            <th class="" scope="col" style="background:rgb(33, 190, 252); color:white;">Phone</th>
+                            <th class="" scope="col" style="background:teal; color:white;">College name</th>
+                            <th class="" scope="col" style="background:brown; color:white;">year</th>
+                            <th class="" scope="col" style="background: green; color:white;">Payment status</th>
+                            <th class="" scope="col" style="background:slategrey; color:white;">Payment Id</th>
                         </tr>
                     </thead>
+
                     <tbody class="table-group-divider">
                         <% var i=1 %>
                             <% data.forEach((item)=>{ %>
@@ -51,37 +59,30 @@
                                     <th scope="row">
                                         <%= i++ %>
                                     </th>
-                                    <td>
+                                    <td class="" style="color: white; background:#3D4D5A; font-weight:600">
                                         <%= item.name %>
                                     </td>
-                                    <td>
+                                    <td style=" font-weight:600">
                                         <%= item.email %>
                                     </td>
                                     <td>
                                         <%=item.phone %>
                                     </td>
+                                    <td style=" font-weight:600">
+                                        <%=item.college %>
+                                    </td>
+                                    <td>
+                                        <%=item.year %>
+                                    </td>
+                                    <td style="color: green;font-weight:600">
+                                        <%=item.payment_status %>
+                                    </td>
+                                    <td style="color: black; font-weight:800">
+                                        <%=item.paymentId %>
+                                    </td>
 
                                 </tr>
                                 <% }) %>
-                    </tbody>
-                </table>
-            </div>
-            <div class="data-table col-sm-3 mt-4">
-                <h3 class="head-text text-center alert alert-warning">Subscribers</h3>
-                <table class="table table-primary table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>email</td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>

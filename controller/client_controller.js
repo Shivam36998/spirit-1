@@ -1,7 +1,16 @@
 import client_model from "../model/cliend_model.js";
 import subscriber_model from "../model/subscriber_model.js";
 import bcrypt from 'bcrypt';
+import flash from "express-flash";
 import jwt from 'jsonwebtoken';
+
+// const toggle_log=async(req,res)=>{
+//     const token = req.cookies.spirit;
+//     const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
+//     const clint_detail=await client_model.findOne({_id:verifyUser._id})
+//     console.log(token,verifyUser,clint_detail);
+    
+// }
 class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
@@ -9,7 +18,7 @@ class data_collector {
             const { name, gender, college, year, city, email, phone } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
-                res.render('greet', { 'title': 'spirit', message: 'Email already exist!!' });
+                res.render('error/greet', { 'title': 'spirit', message: 'Email already exist!!' });
             }
             else {
                 const client_doc = new client_model({
@@ -35,7 +44,9 @@ class data_collector {
 
 
             }
+            // req.flash('message','Registration successful')
             res.redirect('/login');
+            
             // console.log(result);
 
         } catch (error) {
@@ -75,7 +86,8 @@ class data_collector {
                     // res.send(`hey ${result.name} welcome to spirit family
                     // this is your dashboard.`);
 
-                    res.render('registration/login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!` });
+                    res.render('registration/login', { 'title':`welcome😍 ${result.name}`, messages:`Welcome to Spirit ${result.name} you are login successfully!`});
+                    // toggle_log();
                 }
                 else {
                     res.render('registration/login', { 'title': `Login failed ☹️`, messages: `Wrong EmailId or Password` });
@@ -83,7 +95,7 @@ class data_collector {
                 }
             }
             else {
-                res.render('registration/login', { 'title': `Oops! You are not registered!`, messages: `You are not a registered user!` });
+                res.render('registration/login', { 'title': `Oops! You are not registered!`, messages: `You are not a registered user!`});
 
             }
         } catch (err) {
@@ -129,14 +141,14 @@ class data_collector {
     //     }
     // }
 
-    static fatch_subscriber = async (req, res) => {
-        try {
-            const result = await subscriber_model.find()
-        } catch (error) {
-            console.log(error);
+    // static fatch_subscriber = async (req, res) => {
+    //     try {
+    //         const result = await subscriber_model.find()
+    //     } catch (error) {
+    //         console.log(error);
 
-        }
-    }
+    //     }
+    // }
 
 
     // reset email
