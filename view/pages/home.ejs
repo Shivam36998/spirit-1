@@ -1,13 +1,137 @@
 <!-- header -->
 <%- include ('../partials/header.ejs') %>
-<!-- navbar -->
+    <!-- navbar -->
     <%- include('../partials/navbar.ejs') %>
 
-    <!-- drop your code here 👇👇👇👇-->
-        
+        <!-- drop your code here 👇👇👇👇-->
 
-        <h3>this is home page</h3>
+        <!-- ******************************* carousel ********************************* -->
 
 
-<!-- footer -->
-<%- include('../partials/footer.ejs') %>
+
+        <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="box">
+                        a
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="box">
+                        y
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="box">
+                        x
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- ************** About Section ******************** -->
+
+        <section id="about">
+            <div class="about-container justify-content-between ">
+                <div class="about-img">
+                    <img src="/image/3.png" alt="" srcset="">
+                </div>
+                <div class="about-text">
+                    <h1 class="section-title mb-3 mt-3 ps-5 w-100"> About Spirit </h1>
+                    <p class="pt-3 ps-5 pe-5">Spirit is the annual techno-pharma festival of IIT BHU, organised by the
+                        student body
+                        of Pharmaceutical Engineering and Technology, Indian Institute of Technology (Banaras Hindu
+                        Unversity)
+                        Varanasi, India.
+
+                        It is a conclave of multidisciplinary life sciences competitions, events, workshops, panel
+                        discussions,
+                        keynotes, fostering the future of healthcare in India. We have witnessed a footfall of more than
+                        1000+
+                        enthusiasts from various institutions across India in our previous edition.
+
+                        In its glorious history of 10 years it has grown to be one of the largest and most awaited
+                        Techno-Pharmaceutical fest of the country. The two day event encompass new attributes and
+                        innovations to bring
+                        out the best of the participants, exposing the technological wing to reveal the magic within.
+                        So, steady the
+                        sails and dive into the divinity, an everlasting journey to the world of wits and innovation of
+                        health tech.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ******************** Event section ******************* -->
+        <section id="events">
+            <h1 class="text-center section-title mb-5"> Events </h1>
+            <div class="events-container d-flex flex-wrap w-100 ">
+
+
+                <div class="event-card text-center mb-5">
+                    <div class="event-img-box">
+                        <img src="https://cdn.sanity.io/images/0vv8moc6/urologytimes/d198c3b708a35d9adcfa0435ee12fe454db49662-640x400.png/no-image-available-icon-6.jpg?fit=crop&auto=format"
+                            alt="" srcset="" class="w-100">
+                    </div>
+                    <div class="event-title mt-5">
+                        Rheoterica
+                    </div>
+                    <div class="event-text mt-2 ps-3 pe-2">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque natus, blanditiis ipsa
+                            assumenda corporis
+                        </p>
+                    </div>
+                </div>
+
+                <div class="event-card text-center mb-5">
+                    <div class="event-img-box">
+                        <img src="https://cdn.sanity.io/images/0vv8moc6/urologytimes/d198c3b708a35d9adcfa0435ee12fe454db49662-640x400.png/no-image-available-icon-6.jpg?fit=crop&auto=format"
+                            alt="" srcset="" class="w-100">
+                    </div>
+                    <div class="event-title mt-5">
+                        Scientific events
+                    </div>
+                    <div class="event-text mt-2 ps-3 pe-2">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque natus, blanditiis ipsa
+                            assumenda corporis
+                        </p>
+                    </div>
+                </div>
+
+                <div class="event-card text-center mb-5">
+                    <div class="event-img-box">
+                        <img src="https://cdn.sanity.io/images/0vv8moc6/urologytimes/d198c3b708a35d9adcfa0435ee12fe454db49662-640x400.png/no-image-available-icon-6.jpg?fit=crop&auto=format"
+                            alt="" srcset="" class="w-100">
+                    </div>
+                    <div class="event-title mt-5">
+                        Analytical Events
+                    </div>
+                    <div class="event-text mt-2 ps-3 pe-2">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque natus, blanditiis ipsa
+                            assumenda corporis
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <a href="/events" type="button" class="btn btn-success ps-5 pe-5 pt-2 pb-2">Explore</a>
+
+            </div>
+        </section>
+
+
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>

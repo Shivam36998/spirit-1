@@ -1,10 +1,58 @@
 <!-- header -->
 <%- include ('../partials/header.ejs') %>
-<!-- navbar -->
+    <!-- navbar -->
     <%- include('../partials/navbar.ejs') %>
 
         <h3>this is event page</h3>
-        <a href="/events/register_event">Events 1</a>
 
-<!-- footer -->
-<%- include('../partials/footer.ejs') %>
+        <% var messages %>
+            <% if(messages!='' ){%>
+
+                <div class="alert alert-light alert-dismissible fade show" role="alert">
+                    <h1><i class="fa-solid fa-user"></i></h1>
+                    <p class="welcome_txt text">Welcome!</p>
+                    <strong class="text"><%= messages %></strong>
+                    <p class="text">You are login successfully! Make one time payment of 1500₹ for enrollment of events.
+                    </p>
+                    <a href="#" type="button" class="btn-close cancel_btn" data-bs-dismiss="alert"
+                        aria-label="Close"></a>
+                    <a href="/payments" type="button" class="btn btn-success">pay now</a>
+                </div>
+                <% } %>
+                    <a href="/events/register_event">Events 1</a>
+
+                    <!-- footer -->
+                    <%- include('../partials/footer.ejs') %>
+                        <style>
+                            .alert {
+                                position: fixed;
+                                top: 10%;
+                                z-index: 10;
+                                left: 35%;
+                                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                                width: 20rem;
+                                border: 1px solid green;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                            }
+
+                            .alert i {
+                                font-size: 30px;
+
+
+                            }
+
+                            .welcome_txt {
+                                font-size: 30px;
+                                font-weight: 600;
+                                color: green;
+
+                            }
+
+                            .text {
+                                text-align: center;
+                            }
+                        </style>
+                        

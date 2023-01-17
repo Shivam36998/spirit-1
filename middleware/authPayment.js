@@ -15,12 +15,13 @@ const authPayment = async (req, res, next) => {
                res.redirect('/payments')
                 
             }
+           
         }
 
 
         next();
     } catch (error) {
-        res.redirect('/login');
+        res.send('err');
         console.log(error);
 
     }
