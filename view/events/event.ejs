@@ -10,13 +10,14 @@
 
                 <div class="alert alert-light alert-dismissible fade show" role="alert">
                     <h1><i class="fa-solid fa-user"></i></h1>
-                    <p class="welcome_txt text">Welcome!</p>
-                    <strong class="text"><%= messages %></strong>
+                    <p class="welcome_txt">Welcome to SPIRIT'23!</p>
+                    <p class="name_"><%= messages %></p>
                     <p class="text">You are login successfully! Make one time payment of 1500₹ for enrollment of events.
+                        Ignore if you already enrolled.
                     </p>
                     <a href="#" type="button" class="btn-close cancel_btn" data-bs-dismiss="alert"
                         aria-label="Close"></a>
-                    <a href="/payments" type="button" class="btn btn-success">pay now</a>
+                   
                 </div>
                 <% } %>
                     <a href="/events/register_event">Events 1</a>
@@ -36,16 +37,12 @@
                                 align-items: center;
                                 justify-content: center;
                                 flex-direction: column;
+                                font-family: 'Open Sans', sans-serif;
                             }
 
-                            .alert i {
-                                font-size: 30px;
-
-
-                            }
-
+                        
                             .welcome_txt {
-                                font-size: 30px;
+                                font-size: 20px;
                                 font-weight: 600;
                                 color: green;
 
@@ -53,6 +50,13 @@
 
                             .text {
                                 text-align: center;
+                                font-size:13px;
+                                color:black;
+                            }
+                            .name_{
+                                color:darkred;
+                                font-size:larger;
+                                font-weight:600;
                             }
                         </style>
                         

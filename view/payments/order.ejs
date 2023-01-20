@@ -1,13 +1,81 @@
-<div class="d-flex justify-content-center">
+<div class="order-container dfx">
 	<form method="POST" action="/payments/order">
-		<div class="mb-3">
-		  <label for="amountInput" class="form-label">Amount</label>
-		  <input name="amount" type="number" min="1" class="form-control form-control-lg" id="amountInput" aria-describedby="amountHelp" value="1500">
-		  <div id="amountHelp" class="form-text">Bhaiyon aur Beheno, ek rupaiya, sau rupaiya. Kuch bhi chalega.</div>
+		<div class="order-box">
+			<div class="logo dfx">
+				<img src="/image/logo_dark.png" alt="spirit'23">
+			</div>
+			<div class="order-elm dfx">
+				<label for="amountInput" class="form-label">Totel Amount</label>
+				<input name="amount" type="text" min="1" class="form-control form-control-lg" id="amountInput"
+					aria-describedby="amountHelp" readonly value="1500₹">
+				<p id="amountHelp" class="text">This is one time Registration fee! after payment you can 
+				apply for multiple events.	
+				</p>
+			</div>
+			<div class="order-elm dfx">
+				<button type="submit" class="conform" id="getOrderIdBtn">Confirm!</button>
+			</div>
 		</div>
 
-		<div class="d-grid">
-			<button type="submit" class="btn btn-primary" id="getOrderIdBtn">Submit</button>
-		</div>
+		
 	</form>
 </div>
+
+<style>
+	.order-container {
+		height: 100vh;
+		width: 100%;
+		background-color: #ecf1ff;
+
+	}
+	.order-box{
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		width: 30vw;
+		border-top:10px solid   rgb(93, 186, 189)  ;
+		background-color: white;
+		
+		
+	}
+	.order-elm{
+		flex-direction: column;
+	}
+	.order-elm input{
+		outline: none;
+		text-align: center;
+		border: none;
+		font-size: 20px;
+		font-weight: 500;
+	}
+	.order-elm .text{
+		text-align: center;
+		font-size: 15px;
+		padding: 2px 10px;
+        
+	}
+	.conform{
+		border: none;
+		outline: none;
+		padding: 5px 20px;
+		margin: 10px 2px;
+		background-color: rgb(93, 186, 189);
+		color: white;
+		border-radius: 5px;
+		font-size: 18px;
+		transition: .4s;
+		cursor: pointer;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	}
+
+	.conform:hover{
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	}
+	.logo img{
+		width: 20%;
+	}
+
+	.dfx {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

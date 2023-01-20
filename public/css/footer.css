@@ -40,13 +40,8 @@ body {
 	
 }
 
-.login_btn{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    transition: .4s;
-}
-.login_btn:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
+
+
 /* ******************   about section css  ********************* */
 #about {
 
@@ -164,7 +159,7 @@ body {
 
 #events {
 	padding: 7% 12% 5%;
-	background-color: #b8fec4;
+	background-color: #7286D3;
 	/* opacity: 0.1; */
 }
 
@@ -189,13 +184,13 @@ body {
 /* ************************** Footer section ************************  */
 .socials {
 
-	background-color: #21D191;
+	background-color: #8EA7E9;
 	color: white;
 }
 
 .footer-links-container {
 
-	background-color: #EBEFF1;
+	background-color: #E8F1F5;
 }
 
 hr {
@@ -227,7 +222,7 @@ hr {
 	background-color: #BEBFC1;
 }
 
-.text-dark, .nav-link {
+.text-dark, .nav-button {
 	background-image: linear-gradient(to right,
 			#21D191,
 			#21D191 50%,
