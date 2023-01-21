@@ -1,13 +1,73 @@
 <!-- header -->
 <%- include ('../partials/header.ejs') %>
-<!-- navbar -->
-    <%- include('../partials/navbar.ejs') %>
+    <!-- navbar -->
+    
 
-    <!-- drop your code here 👇👇👇👇-->
+        <!-- drop your code here 👇👇👇👇-->
+
+        <!-- for true state -->
         
+        <!-- for false state -->
+      
+        <% var messages %>
+        <% var state %>
+        <% if(state==true){%>
+            <div class="error_box">
+                <div class="err-msg-box">
+                    <p class="err-msg t"><%- messages %></p>
+                    <a  onclick="history.back()" type="button" class="btn btn-sm btn-success">Go somewhere</a>
+                </div>
+            </div>
+        <% }else{ %>
+            <div class="error_box">
+                <div class="err-msg-box">
+                    <h4>Oops!</h4>
+                    <p class="err-msg f"><%- messages %></p>
+                    <a type="button"  class="btn btn-sm btn-danger" onclick="history.back()">Go back</a>
+                </div>
+            </div>
+    
+        <% } %>
 
-        <h3><%= message %> </h3>
+     
+    
+        
+       
+      <style>
+        .error_box{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: #E8F1F5;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .err-msg-box{
+            display: flex;
+            width:40vw;
+            height: 200px;
+            background-color: #FFF2F2;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-top: 10px solid #7286D3 ;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
 
-<!-- footer -->
-<%- include('../partials/footer.ejs') %>
+        .err-msg{
+            font-size: 15px;
+            padding: 3px 8px;
+            text-align: center;
+           
+
+        }
+        .t{
+            color: green;
+        }
+        .f{
+            color: red;
+        }
+      </style>
+       
+      

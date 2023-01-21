@@ -39,6 +39,28 @@ body {
 	}
 	
 }
+.login_btn{
+	text-decoration: none;
+	background-color: #4B56D2;
+	color: white;
+	border-radius: 5px;
+	transition: .4s;
+  }
+  .login_btn:hover{
+	background-color: #2536e6;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .reg_btn{
+	text-decoration: none;
+	border: 1px solid #4B56D2;
+	color: black;
+	border-radius: 5px;
+	transition: .4s;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  .reg_btn:hover{
+	box-shadow: none;
+  }
 
 
 
@@ -147,7 +169,7 @@ body {
 
 	width: 100%;
 	height: 500px;
-	background-color: #21D191;
+	background-color: #7286D3;
 }
 
 .inline-icon {
@@ -172,6 +194,19 @@ body {
 	margin-top: 6%;
 	justify-content: space-between;
 }
+#btn-explore{
+	background-color: #E5E0FF !important;
+	color: black;
+	padding: 5px 30px;
+	text-transform: uppercase;
+	transition: .5s all ease;
+	border: 1px solid #E5E0FF;
+}
+#btn-explore:hover{
+	background-color: #7286D3 !important;
+	color: white;
+
+}
 
 .event-title {
 
@@ -185,7 +220,7 @@ body {
 .socials {
 
 	background-color: #8EA7E9;
-	color: white;
+	color:#FFF2F2 ;
 }
 
 .footer-links-container {
@@ -224,8 +259,8 @@ hr {
 
 .text-dark, .nav-button {
 	background-image: linear-gradient(to right,
-			#21D191,
-			#21D191 50%,
+			#366ED8,
+			#366ED8 50%,
 			#000 50%);
 	background-size: 200% 100%;
 	background-position: -100%;
@@ -240,7 +275,7 @@ hr {
 
 .text-dark:before , .nav-link::before{
 	content: '';
-	background: #21D191;
+	background: #7286D3;
 	display: block;
 	position: absolute;
 	bottom: -3px;

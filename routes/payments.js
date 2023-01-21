@@ -27,7 +27,7 @@ let razorPayInstance = new Razorpay({
 router.get('/', function (req, res, next) {
     // Render form for accepting amount
     res.render('payments/order', {
-        title: 'Donate for Animals'
+        title: 'payments'
     });
 });
 
@@ -48,6 +48,14 @@ router.post('/order', function (req, res, next) {
             const token = req.cookies.spirit;
             const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
             const clint_detail=await client_model.findOne({_id:verifyUser._id})
+            if(clint_detail.payment_status=="paid"){
+                var messages="Payment already done! go for event registration!";
+                res.render('error/greet', { 'title': 'spirit', messages, state:true});
+                console.log(messages);
+                
+                
+                return;
+            }
 
            ////////////////// 
 
