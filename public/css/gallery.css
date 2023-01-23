@@ -118,7 +118,7 @@
     cursor: pointer;
 }
 .gallery-btn-img:hover{
-    filter: grayscale(100%);
+    filter:contrast(180%);
 }
 #btn-img-1{background: url("/image/gallery/pixel.jpg") no-repeat center center/cover;}
 #btn-img-2{background: url("/image/gallery/gallery.jpg") no-repeat center center/cover;}

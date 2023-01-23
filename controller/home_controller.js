@@ -182,6 +182,25 @@ class home_event {
 
         }
     }
+    // dashboard//
+
+    static client_dashboard=async(req,res)=>{
+        const token = req.cookies.spirit;
+        const verifyUser = Jwt.verify(token, process.env.JWT_SECREAT_KEY);
+        try{
+            if(!verifyUser){
+                var messages="You are not a registered user!!!"
+                res.render('error/greet',{"title":'error',messages,state:false});
+                return;
+            }
+            const data=await client_model.findOne({_id:verifyUser._id});
+            res.render('pages/dashboard',{data});
+        }catch(err){
+            console.log(err.messages);
+            
+        }
+       
+    }
 }
 
 

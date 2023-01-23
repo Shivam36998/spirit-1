@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,4 +36,122 @@
 
    </form> 
 </body>
+</html> -->
+
+<!-- header -->
+
+<!-- navbar -->
+
+
+<!-- drop your code here 👇👇👇👇-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/events_css/reg_event.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Register for this events!</title>
+</head>
+
+<body>
+    <% var data %>
+        <div class="registration">
+            <div class="reg_layer">
+                <div class="main">
+                    <div class="form_content main_form">
+
+
+                        <!-- <h4 class="intro_text">Register here</h4> -->
+
+                        <div class="form">
+                            <div class="logo">
+                                <img src="/image/logo_dark.png" alt="spirit'23">
+                            </div>
+                            <h6>Sign up with credentials</h6>
+                            <form method="post">
+
+                                <div class="form_elm">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" readonly value="<%=data.name%>">
+                                </div>
+
+                                <div class="form_elm">
+                                    <label for="email">Email id</label>
+                                    <input type="email" name="email" autocomplete="off" id="email" readonly
+                                        value="<%=data.email%>">
+                                </div>
+                                <div class="form_elm">
+                                    <label for="phone">Contact number</label>
+                                    <input type="tel" name="phone" id="phone" readonly value="<%=data.phone%>">
+                                </div>
+                                <div class="form_elm">
+                                    <label for="college">College name</label>
+                                    <input type="text" name="college" id="college" readonly value="<%=data.college%>">
+                                </div>
+                                <div class="form_elm">
+                                    <label for="year">Year</label>
+                                    <input type="text" name="year" id="year" readonly value="<%=data.year%>">
+                                </div>
+                                <div class="form_elm">
+                                    <label for="">Events LIST</label>
+                                    <select name="select1" id="select1" onchange="populate(this.id,'select2')">
+                                        <option value="">--choose events---</option>
+                                        <option value="Scientific">SCIENTIFIC EVENTS</option>
+                                        <option value="Rhetorica">Rhetorica Events</option>
+                                        <option value="Analytical">Analytical Events</option>
+                                    </select>
+
+                                </div>
+                                <div class="form_elm">
+                                    <label for="">Events</label>
+                                    <select name="select2" id="select2">
+                                        
+                                    </select>
+
+                                </div>
+                                <div class="form_elm">
+                                    <button type="submit" id="submit">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="/js/all.js"></script> -->
+        <script src="/js/logic.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script>
+           function populate(s1,s2){
+            var s1=document.getElementById(s1);
+            var s2=document.getElementById(s2);
+
+            s2.innerHTML="";
+            if(s1.value=="Scientific"){
+                var optionArray=["Polaris|Polaris: PG Poster Presentation","Agnitio| Agnitio: UG Poster Presentation","Fabrica|Fabrica: Model Making"];
+            }
+            else if(s1.value=="Rhetorica"){
+                var optionArray=["aabsb|AAA","dgdgsh|BBB","uuuuu|SSSS"];
+            }
+            else if(s1.value=="Analytical"){
+                var optionArray=["suraj|SURAJ","dgdgsh|NISHANT","uuuuu|SWETANK"];
+
+            }
+
+            for(var option in optionArray){
+                var pair=optionArray[option].split("|");
+                var newoption=document.createElement("option");
+
+                newoption.value=pair[0];
+                newoption.innerHTML=pair[1];
+                s2.options.add(newoption);
+            }
+           }
+        </script>
+
+</body>
+
 </html>

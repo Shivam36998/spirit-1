@@ -37,6 +37,10 @@ router.get('/payment_dashboard',home_event.My_payment_dashboard);
 //     res.render('razorpay');
 // })
 
+// user dashboard//
+
+router.get('/mydb',authUser,home_event.client_dashboard);
+
 // router.post('create/orderId',home_event.creatOrer)
 // router.post('api/payment/verify',home_event.verifyOrder)
 
