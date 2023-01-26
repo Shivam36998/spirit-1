@@ -13,9 +13,10 @@ font-family: 'Knewave', cursive;
 *{
     padding: 0;
     margin: 0;
-   
+    
 
 }
+
 .registration{
     position: relative;
     width: 100%;
@@ -71,7 +72,8 @@ font-family: 'Knewave', cursive;
     background-color:white;
     padding: 10px 20px;
     border-top: 7px solid #4B56D2;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
 }
 
 .form_content .intro_text{
@@ -117,23 +119,22 @@ font-family: 'Knewave', cursive;
 
 .registration .form_elm label{
     color:black;
-    font-size: 15px;
+    font-size: 17px;
     padding: 0;
     margin: 0;
     font-size: 15px;
-    font-weight: 600;
 }
 
 .registration .form_elm input, select{
    outline: none;
     padding: 4px 4px;
     border: none;
-    border-radius: 5px;
-    margin: 4px;
-    font-size: 15px;
+    /* border-radius: 5px; */
+    margin: 10px 0px;
+    font-size: 14px;
     color:black ;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    /* border: 1.5px solid #7286D3; */
-    /* border-color: black; */
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    border: 1.5px solid #7286D3; */
+    background-color: #cfdce4;
 }
 
 .registration select{

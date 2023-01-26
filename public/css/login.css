@@ -25,7 +25,7 @@ font-family: 'Knewave', cursive;
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background:url("/image/reg_back.jpg")no-repeat center center/cover;
+    /* background:url("/image/reg_back.jpg")no-repeat center center/cover; */
 
     /* background-color: rgb(14, 63, 63); */
 }
@@ -33,7 +33,7 @@ font-family: 'Knewave', cursive;
 .login_container .layer{
     width: 100%;
     height: 100%;
-    background-color:rgba(55, 55, 79, 0.872);
+    /* background-color:rgba(55, 55, 79, 0.872); */
     content: "";
     display: flex;
     align-items: center;
@@ -54,35 +54,37 @@ font-family: 'Knewave', cursive;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
 }
-.log_main .log_1 .text{
+/* .log_main .log_1 .text{
     text-align: center;
     padding: 0px 10px;
     font-size: 18px;
     color: antiquewhite;
-}
+} */
 
-.log_main .link{
+/* .log_main .link{
     color:cyan;
-}
+} */
 
 .log_main a{
     color:rgb(2, 124, 255);
     text-decoration: none;
 }
 .head{
-    color: rgb(25, 101, 253);
+    color:black;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 .log_main .log_form{
-    background-color:azure;
+    background-color:white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 5px 20px;
+    /* padding: 5px 20px; */
     border-radius: 4px;
-    margin: 10px 2px;
+    border-top: 7px solid #4B56D2;
+    /* margin: 10px 2px; */
+    /* width: 80%; */
 }
 
 .log_form .form{
@@ -90,6 +92,14 @@ font-family: 'Knewave', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.log_form .form form{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .log_form .form_elm{
@@ -115,8 +125,8 @@ font-family: 'Knewave', cursive;
 
 .log_form .form_elm input{
     outline: none;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    border:1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    /* border: 1.5px solid #7286D3; */
+    border:none;
     border-radius: 4px;
     /* padding: 2px 5px; */
     /* margin: 4px; */
@@ -128,18 +138,18 @@ font-family: 'Knewave', cursive;
 }
 
 #log_submit{
-    background: rgb(38, 121, 247);
+    background:#4B56D2;
     transition: .4s all ease-out;
     margin-top: 10px;
     border-radius: 5px;
     color: white;
     border: none;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;}
+   }
 
 #log_submit:hover{
-    background: rgb(8, 66, 154);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background:#2536e6;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 
@@ -162,8 +172,8 @@ font-family: 'Knewave', cursive;
     .login_container .layer .log_main{
         flex-direction: column;
     }
-    .log_main .log_1{
-        width: 90%;
+    .log_main .log_form{
+        width: 80%;
     }
 
 

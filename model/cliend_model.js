@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const client_schema= new mongoose.Schema({
     name:{type:String, required:true, trim:true},
+    lname:{type:String, trim:true},
     gender:{type:String},
     college:{type:String, required:true, trim:true},
     year:{type:String,required:true},
