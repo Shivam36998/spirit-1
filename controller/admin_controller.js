@@ -56,7 +56,7 @@ static adminHome=async(req,res)=>{
     try{ 
         const all_result= await client_model.find();
 
-        res.render('admin/admin',{'title':'welcome to admin pannel', data:all_result});
+        res.render('admin/admin',{data:all_result});
     }catch(error){
         console.log(error);
         
@@ -66,7 +66,7 @@ static adminHome=async(req,res)=>{
 static events_reg= async(req,res)=>{
     try{
 
-        res.render('admin/events_reg',{'title':'all events'})
+        res.render('admin/events_reg')
     }catch(error){
         console.log(error);
         

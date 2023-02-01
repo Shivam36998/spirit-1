@@ -42,135 +42,7 @@
                 <div class="mt-2"><a href="/login" class="text-dark"> Login</a></div>
                 <div class="mt-2"><a href="/registration" class="text-dark"> Register</a></div>
                 <!-- <div class="mt-2"><a href="" title="Campus ambassador" class="text-dark">Become our CA</a></div> -->
-                <div class="mt-2">
-                    <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Become our CA
-                    </a>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Become our Campus Ambessdor</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body dfx">
-                                  <div class="ca-form dfx">
-                                    <form action="/ca" >
-                                        <div class="ca-combined">
-                                            <div class="ca-elm">
-                                                <label for="fname">First name</label>
-                                                <input type="text" name="fname" id="fname">
-                                            </div>
-                                            <div class="ca-elm">
-                                                <label for="lname">Last name</label>
-                                                <input type="text" name="lname" id="lname">
-                                            </div>
-                                        </div>
-                                        <div class="ca-elm">
-                                            <label for="email">Email Id</label>
-                                            <input type="email" name="email" id="email">
-                                        </div>
-                                        
-                                        <div class="ca-combined">
-                                            <div class="ca-elm">
-                                                <label for="college">College</label>
-                                                <input type="text" name="college" id="college">
-                                            </div>
-                                            <div class="ca-elm">
-                                                <label for="year">Year</label>
-                                                <input type="text" name="year" id="year">
-                                            </div>
-                                        </div>
-                                        <div class="ca-combined">
-                                            <div class="ca-elm">
-                                                <label for="address">Postal Address</label>
-                                                <input type="text" name="address" id="address">
-                                            </div>
-                                            <div class="ca-elm">
-                                                <label for="code">Pin code</label>
-                                                <input type="number" min="1000" max="9999" name="code" id="code">
-                                            </div>
-                                        </div>
-                                        <div class="ca-elm">
-                                            <label for="question">Why should we choose you?</label>
-                                           <textarea name="question" id="question"></textarea>
-                                        </div>
-
-                                        <div class="ca-combined">
-                                            <div class="ca-elm">
-                                                <label for="phone">Phone number</label>
-                                                <input type="tel" name="phone" id="phone">
-                                            </div>
-                                            <div class="ca-elm">
-                                                <label for="whatsapp">Whatsapp number</label>
-                                                <input type="tel" name="whatsapp" id="whatsapp">
-                                            </div>
-                                        </div>
-                                        <div class="ca-combined">
-                                            <div class="ca-elm">
-                                                <label for="password">Password</label>
-                                                <input type="password" name="password" id="password">
-                                            </div>
-                                            <div class="ca-elm">
-                                                <label for="cpassword">Confirm Password</label>
-                                                <input type="password" name="cpassword" id="cpassword">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </form>
-                                  </div>
-                                </div>
-                                
-                            </div>
-                            <style>
-                                .dfx{
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                }
-                                .ca-form{
-                                    width: 100%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                }
-                                .ca-form form{
-                                    display: flex;
-                                    flex-direction: column;
-                                    width: 100%;
-                                    justify-content: center;
-                                    align-items: center;
-                                   
-                                }
-                                .ca-elm{
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: flex-start;
-                                    width: 100%;
-                                    margin: 10px 0px;
-                                    
-
-                                }
-                                .ca-elm input, textarea{
-                                    background-color: black;
-                                }
-                                .ca-combined{
-                                    display: flex;
-                                    align-items: flex-start;
-                                    justify-content: flex-start;
-                                    width: 100%;
-                                }
-                            </style>
-                        </div>
-                    </div>
-                </div>
+                <div class="mt-2"><a href="/ca" class="text-dark"> Become our CA</a></div>
 
             </div>
         </div>
@@ -213,8 +85,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-crossorigin="anonymous"></script>
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
 </body>
 

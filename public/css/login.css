@@ -82,7 +82,7 @@ font-family: 'Knewave', cursive;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     /* padding: 5px 20px; */
     border-radius: 4px;
-    border-top: 7px solid #4B56D2;
+    border-top: 7px solid #007ea7;
     /* margin: 10px 2px; */
     /* width: 80%; */
 }
@@ -138,7 +138,7 @@ font-family: 'Knewave', cursive;
 }
 
 #log_submit{
-    background:#4B56D2;
+    background:#007ea7;
     transition: .4s all ease-out;
     margin-top: 10px;
     border-radius: 5px;
@@ -148,7 +148,7 @@ font-family: 'Knewave', cursive;
    }
 
 #log_submit:hover{
-    background:#2536e6;
+    background:#00688a;
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

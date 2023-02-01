@@ -148,7 +148,7 @@ class home_event {
 
     static savePassword = async (req, res) => {
         const { id, token } = req.params;
-        const { password, password2 } = req.body;
+        const { password, cpassword } = req.body;
 
         const result = await client_model.findOne({ _id: id });
         if (!result) {
@@ -162,7 +162,7 @@ class home_event {
             const paylode = Jwt.verify(token, secret);
             console.log('paylod verifyed');
 
-            if (password !== password2) {
+            if (password !== cpassword) {
                 res.render('registration/reset-password', { email:result.email,messages:"Both passwords should be same!" });
                 return
 
