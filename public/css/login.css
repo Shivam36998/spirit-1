@@ -74,8 +74,8 @@ font-family: 'Knewave', cursive;
 .head{
     color:black;
     text-align: center;
-    font-size: 20px;
-    font-weight: 600;
+    /* font-size: 20px; */
+    /* font-weight: 600; */
 }
 .log_main .log_form{
     background-color:white;
@@ -85,6 +85,7 @@ font-family: 'Knewave', cursive;
     border-top: 7px solid #4B56D2;
     /* margin: 10px 2px; */
     /* width: 80%; */
+
 }
 
 .log_form .form{
@@ -92,13 +93,15 @@ font-family: 'Knewave', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .log_form .form form{
-    width: 70%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     
 }
 
@@ -116,10 +119,9 @@ font-family: 'Knewave', cursive;
 
 .log_form .form_elm label{
     color: black;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0;
     margin: 0;
-    font-size: 15px;
     font-weight: 500;
 }
 
@@ -128,11 +130,12 @@ font-family: 'Knewave', cursive;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    /* border: 1.5px solid #7286D3; */
     border:none;
     border-radius: 4px;
-    /* padding: 2px 5px; */
+    padding: 2px 10px;
     /* margin: 4px; */
-    font-size: 15px;
+    /* font-size: 13px; */
     color: black;
     background: transparent;
+    border: 1px solid grey;
     /* border-bottom: 1.5px solid black; */
     /* border-color: black; */
 }
@@ -145,13 +148,20 @@ font-family: 'Knewave', cursive;
     color: white;
     border: none;
     cursor: pointer;
+    padding: 4px 5px;
+    
    }
 
 #log_submit:hover{
-    background:#2536e6;
-	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background:#505dea;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+.bottom-text{
+
+    font-size: 13px;
+
+}
 
 /* responsive */
 
@@ -173,7 +183,7 @@ font-family: 'Knewave', cursive;
         flex-direction: column;
     }
     .log_main .log_form{
-        width: 80%;
+        width: 90%;
     }
 
 
