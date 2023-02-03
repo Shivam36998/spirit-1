@@ -448,12 +448,13 @@
                     <p class="name_">
                         <%= messages %>
                     </p>
-                    <p class="text">You are login successfully! Make one time payment of 1500₹ for enrollment of events.
+                    <h5 style="color: #009200; font-weight:600; text-transform:capitalize"> login successfully!</h5>
+                    <p class="text">Make one time payment of 1500₹ for enrollment of events.
                         Ignore if you already enrolled.
                     </p>
                     <a href="#" type="button" class="btn-close cancel_btn" data-bs-dismiss="alert" aria-label="Close">
                     </a>
-                    <a href="/payments" class="btn btn-sm btn-success" target="_blank" rel="noopener noreferrer">Pay</a>
+                    <a href="/payments" class="btn btn-sm btn-primary pay-btn" target="_blank" rel="noopener noreferrer">Pay</a>
 
 
                 </div>
@@ -470,9 +471,7 @@
                                 top: 10%;
                                 z-index: 10;
                                 left: 35%;
-                                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
                                 width: 20rem;
-                                border: 1px solid green;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
@@ -484,7 +483,7 @@
                             .welcome_txt {
                                 font-size: 20px;
                                 font-weight: 600;
-                                color: green;
+                                color: black;
 
                             }
 
@@ -495,9 +494,15 @@
                             }
 
                             .name_ {
-                                color: darkred;
-                                font-size: larger;
+                                font-size:25px;
                                 font-weight: 600;
+                                text-transform: capitalize;
+                                color: #007ea7;
+                                
+                            }
+
+                            .pay-btn{
+                                padding: 3px 25px;
                             }
 
                             @media (max-width: 530px) {}
