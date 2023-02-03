@@ -1,5 +1,4 @@
 import client_model from "../model/cliend_model.js";
-import subscriber_model from "../model/subscriber_model.js";
 import bcrypt from 'bcrypt';
 import flash from "express-flash";
 import jwt from 'jsonwebtoken';

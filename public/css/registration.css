@@ -70,7 +70,7 @@ font-family: 'Knewave', cursive;
 .main .main_form{
     background-color:white;
     padding: 10px 20px;
-    border-top: 7px solid #4B56D2;
+    border-top: 7px solid #007ea7;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
@@ -166,7 +166,7 @@ font-family: 'Knewave', cursive;
 
 
  .registration .form_elm #submit{
-    background-color: #4B56D2;
+    background-color: #007ea7;
 	color: white;
     border: none;
 	border-radius: 5px;
@@ -178,7 +178,7 @@ font-family: 'Knewave', cursive;
   }
  .registration .form_elm #submit:hover{
     cursor: pointer;
-    background-color: #2536e6;
+    background-color: #00688a;
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     
   }
