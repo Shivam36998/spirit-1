@@ -92,6 +92,7 @@ font-family: 'Knewave', cursive;
 
 .form_content .form form{
     width: 100%;
+    /* border: 1px solid black; */
 }
 
 .form .combined{
@@ -117,21 +118,24 @@ font-family: 'Knewave', cursive;
 
 .registration .form_elm label{
     color:black;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0;
-    margin: 0;
-    font-size: 15px;
-    font-weight: 600;
+    margin-bottom: 4px;
+    font-weight: 500;
+
 }
 
 .registration .form_elm input, select{
    outline: none;
+
     padding: 4px 4px;
     border: none;
     border-radius: 5px;
-    margin: 4px;
+    margin-bottom: 4px;
     font-size: 15px;
     color:black ;
+   border: 1px solid grey;
+
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;    /* border: 1.5px solid #7286D3; */
     /* border-color: black; */
 }
@@ -168,9 +172,9 @@ font-family: 'Knewave', cursive;
 	border-radius: 5px;
 	transition: .4s;
     font-weight: 500;
-    font-size: 15px;
+    /* font-size: 15px; */
     margin: 5px 0px;
-    padding: 5px;
+    padding: 6px 5px;
   }
  .registration .form_elm #submit:hover{
     cursor: pointer;
@@ -189,7 +193,7 @@ font-family: 'Knewave', cursive;
     
     .main .form_content{
         margin: 5px 10px;
-        width: 70%;
+        width: 90%;
     }
 
     .main .form_content .text{
@@ -229,6 +233,11 @@ font-family: 'Knewave', cursive;
     }
     .main .form_content .text{
         line-height: 20px;
+    }
+
+    #name, #year{
+
+        margin-right: 0 !important;
     }
   }
 

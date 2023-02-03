@@ -34,7 +34,7 @@ body
 .nav-pills .nav-item .active{
     background-color: #007ea7 !important;
     box-shadow: 0px 0px 7px 3px rgb(11, 255, 255);
-    /* color: black; */
+    color: white !important;
     
 }
 .event-title h1{

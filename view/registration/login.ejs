@@ -2,7 +2,10 @@
 <%- include ('../partials/header.ejs') %>
     <!-- navbar -->
     <nav>
+
+       
         <a href="/" style="margin:5px 10px; text-decoration:none; color:#00b9ce;
+
         font-size:25px;"><i class="fa-solid fa-house"></i> Home</a>
     </nav>
 
@@ -19,30 +22,30 @@
 
                                 </div> -->
                                 <div class="log_form">
-                                    <div class="logo">
+                                    <div class="logo mt-3">
                                         <img src="/image/logo_dark.png" alt="spirit'23">
                                     </div>
-                                    <p class="head">Login</p>
+                                    <p class="head mt-3 mb-4">Login with credentials</p>
                                     <div class="form">
                                         <form method="post">
                                             <div class="form_elm">
-                                                <label for="email">Email id/Username</label>
+                                                <label for="email" class="mb-2">Email id/Username</label>
                                                 <input type="email" name="email" id="email" required>
                                             </div>
                                             <div class="form_elm">
                                                 <!-- <i class="fa-solid fa-eye" id="togglePassword"></i> -->
 
-                                                <label for="password">Password<i class='bx bxs-low-vision'
+                                                <label for="password" class="mb-2">Password<i class='bx bxs-low-vision'
                                                         id="togglePassword"></i></label>
                                                 <input type="password" name="password" id="password" minlength="8"
                                                     required>
                                             </div>
-                                            <div class="form_elm">
+                                            <div class="form_elm mt-2">
                                                 <button type="submit" id="log_submit">Login</button>
                                             </div>
-                                            <div>
+                                            <div class="form_elm bottom-text">
                                                 <p><a href="/forgetpassword">forgot password?</a></p>
-                                                <p>New here?<a href="/registration">Sign up </a>now</p>
+                                                <p>New here? <a href="/registration">Sign up </a>now</p>
 
                                             </div>
 
