@@ -79,8 +79,8 @@
                             <form method="post">
 
                                 <div class="form_elm">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" readonly value="<%=data.name%> <%=data.lname%>">
+                                    <label for="event_name">Name</label>
+                                    <input type="text" id="event_name" name="event_name" readonly value="<%=data.name%> <%=data.lname%>">
                                 </div>
 
                                 <div class="form_elm">
@@ -91,6 +91,10 @@
                                 <div class="form_elm">
                                     <label for="phone">Contact number</label>
                                     <input type="tel" name="phone" id="phone" readonly value="<%=data.phone%>">
+                                </div>
+                                <div class="form_elm">
+                                    <label for="whatsapp">Whatsapp number</label>
+                                    <input type="tel" name="whatsapp" id="whatsapp" readonly value="<%=data.whatsapp%>">
                                 </div>
                                 <div class="form_elm">
                                     <label for="college">College name</label>
@@ -150,7 +154,7 @@
                 var pair=optionArray[option].split("|");
                 var newoption=document.createElement("option");
 
-                newoption.value=pair[0];
+                newoption.value=pair[1];
                 newoption.innerHTML=pair[1];
                 s2.options.add(newoption);
             }

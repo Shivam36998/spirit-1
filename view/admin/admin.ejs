@@ -56,10 +56,10 @@
                             <th class="" scope="col" style="background:#3D4D5A; color:white;">Name</th>
                             <th class="" scope="col" style="background:#795548; color:white;">Email</th>
                             <th class="" scope="col" style="background:rgb(33, 190, 252); color:white;">Phone</th>
+                            <th class="" scope="col" style="background:slategrey; color:white;">Whatsapp number</th>
                             <th class="" scope="col" style="background:teal; color:white;">College name</th>
                             <th class="" scope="col" style="background:brown; color:white;">year</th>
                             <th class="" scope="col" style="background: green; color:white;">Payment status</th>
-                            <th class="" scope="col" style="background:slategrey; color:white;">Payment Id</th>
                         </tr>
                     </thead>
 
@@ -80,6 +80,9 @@
                                     <td>
                                         <%=item.phone %>
                                     </td>
+                                    <td style="color: black; font-weight:800">
+                                        <%=item.whatsapp %>
+                                    </td>
                                     <td style=" font-weight:600">
                                         <%=item.college %>
                                     </td>
@@ -88,9 +91,6 @@
                                     </td>
                                     <td style="color: green;font-weight:600">
                                         <%=item.payment_status %>
-                                    </td>
-                                    <td style="color: black; font-weight:800">
-                                        <%=item.paymentId %>
                                     </td>
 
                                 </tr>

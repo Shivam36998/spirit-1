@@ -42,7 +42,7 @@ body
 	font-family: 'Poppins', sans-serif;
 	font-size: 45px;
     text-transform: uppercase;
-    color: #007ea7;
+    color: #00b4d8;
 
 }
 
@@ -84,20 +84,21 @@ body
 
 .event-reg-btn{
     outline: none;
-    background-color: #007ea7;
+    background-color: #00b4d8;
     color: black;
 }
 .event-rule-btn{
-    border: .7px solid #007ea7;
+    border: .7px solid #00b4d8;
     outline: none;
-    color: #007ea7;
+    color: #00b4d8;
 }
 .event-rule-btn:hover{
     background-color: #007ea7 !important;
     color: black;
 }
 .event-reg-btn:hover{
-    background-color: white !important;
+    border: .7px solid #00b4d8 ;
+    color: #00b4d8;
 }
 
 @media (max-width:1200px) {

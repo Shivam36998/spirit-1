@@ -65,8 +65,27 @@ static adminHome=async(req,res)=>{
 
 static events_reg= async(req,res)=>{
     try{
+        const all_result=await client_model.find();
+        var scientific=new Array();
+        var rhetorica=new Array();
+        var analytical=new Array();
+        
+        all_result.forEach((item)=>{
+            if(item.Scientific.length>0){
+                scientific.push(item);
+            }
+            if(item.Rhetorica.length>0){
+                rhetorica.push(item);
+            }
+            if(item.Analytical.length>0){
+                analytical.push(item);
+            }
+        })
 
-        res.render('admin/events_reg')
+        res.render('admin/events_reg',{scientific,rhetorica,analytical})
+        // res.send('hii')
+        // console.log(typeof(all_result.sc));
+        
     }catch(error){
         console.log(error);
         

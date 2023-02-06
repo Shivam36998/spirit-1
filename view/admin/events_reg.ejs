@@ -66,6 +66,8 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="pre-event" role="tabpanel" aria-labelledby="pre-event-tab">
+            <% scientific.forEach((item)=>{ %>
+            <h3 class="text-center alert alert-success m-3">Events 1</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -80,31 +82,16 @@
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td><%=item.name%></td>
+                        <td><%=item.email%></td>
                         <td>@mdo</td>
                         <td>@mdo</td>
                         <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="tab-pane fade" id="Rhetorica" role="tabpanel" aria-labelledby="Rhetorica-tab">
+            <% }) %>
+            <h3 class="text-center alert alert-success m-3">Events 2</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -125,25 +112,108 @@
                         <td>@mdo</td>
                         <td>@mdo</td>
                     </tr>
+                </tbody>
+            </table>
+
+            <h3 class="text-center alert alert-success m-3">Events 3</h3>
+            <table class="table table-bordered">
+                <thead>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="tab-pane fade" id="Rhetorica" role="tabpanel" aria-labelledby="Rhetorica-tab">
+            <h3 class="text-center alert alert-success m-3">Events 1</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="text-center alert alert-success m-3">Events 2</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="text-center alert alert-success m-3">Events 3</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="tab-pane fade" id="Scientific" role="tabpanel" aria-labelledby="Scientific-tab">
+            <h3 class="text-center alert alert-success m-3">Events 1</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -164,25 +234,58 @@
                         <td>@mdo</td>
                         <td>@mdo</td>
                     </tr>
+                </tbody>
+            </table>
+            <h3 class="text-center alert alert-success m-3">Events 2</h3>
+            <table class="table table-bordered">
+                <thead>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="text-center alert alert-success m-3">Events 3</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="tab-pane fade" id="Analytical" role="tabpanel" aria-labelledby="Analytical-tab">
+            <h3 class="text-center alert alert-success m-3">Events 1</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -203,25 +306,58 @@
                         <td>@mdo</td>
                         <td>@mdo</td>
                     </tr>
+                </tbody>
+            </table>
+            <h3 class="text-center alert alert-success m-3">Events 2</h3>
+            <table class="table table-bordered">
+                <thead>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="text-center alert alert-success m-3">Events 3</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Sub-events</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    
     <style>
         .nav-tabs .nav-item .active {
             background-color: black;
