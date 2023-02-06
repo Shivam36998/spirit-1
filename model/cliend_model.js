@@ -23,9 +23,6 @@ const client_schema= new mongoose.Schema({
     ],
     join:{type:Date,default:Date.now},
     is_admin:{type:Boolean,default:0},
-    Scientific:[{type:String,unique:true}],
-    Rhetorica:[{type:String,unique:true}],
-    Analytical:[{type:String,unique:true}],
     payment_status:{type:String, default:"unpaid"},
     paymentId:{type:String},
     signature:{type:String}
