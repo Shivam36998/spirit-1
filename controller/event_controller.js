@@ -29,46 +29,29 @@ class event_handler {
         res.send("error 404");
       } else {
         const { email, select1, select2, phone, whatsapp, college, year } =
-        req.body;
-        const id = verifyUser._id;
+          req.body;
+        // const id = verifyUser._id;
+        const email_=await enrolled_user_model.findOne({email:email})
+        const event_=await enrolled_user_model.findOne({subevent:select2})
+
+        if(email_ && event_){
+          let messages="Great! you are already registered for this event.";
+            res.render('error/greet', { 'title': `Already registered!`, messages, state:true });
+            return;
+        }
 
         const user_doc = new enrolled_user_model({
-            email:email,
-            event_name:select1,
-            subevent:select2,
-            phone:phone,
-            whatsapp:whatsapp,
-            college:college,
-            year:year
+          email: email,
+          event_name: select1,
+          subevent: select2,
+          phone: phone,
+          whatsapp: whatsapp,
+          college: college,
+          year: year,
         });
 
         await user_doc.save();
         res.send("data saved successfully");
-
-        // if(select1=="Scientific"){
-        //     await client_model.findOneAndUpdate({email:email},{
-        //         $addToSet:{
-        //             Scientific:select2,
-        //         }
-        //     });
-        // }
-        // else if(select1=="Rhetorica") {
-        //     await client_model.findOneAndUpdate({email:email},{
-        //         $addToSet:{
-        //             // Scientific:select2,
-        //             Rhetorica:select2,
-        //             // Analytical:select2,
-        //         }
-        //     });
-        // }
-        // else if(select1=="Analytical"){
-        //     await client_model.findOneAndUpdate({email:email},{
-        //     $addToSet:{
-        //         // Scientific:select2,
-        //         // Rhetorica:select2,
-        //         Analytical:select2,
-        //     }
-        // });
       }
     } catch (error) {
       console.log(error);
