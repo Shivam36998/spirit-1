@@ -2,6 +2,7 @@ import express from 'express';
 import home_event from '../controller/home_controller.js';
 import data_collector from '../controller/client_controller.js';
 import authUser from '../middleware/authUser.js';
+import creatCA from '../controller/CA_controller.js';
 const router=express.Router();
 
 router.get('/',home_event.My_home);
@@ -43,6 +44,10 @@ router.get('/mydb',authUser,home_event.client_dashboard);
 
 // router.post('create/orderId',home_event.creatOrer)
 // router.post('api/payment/verify',home_event.verifyOrder)
+
+// route for CA
+router.get('/ca',creatCA.CA_page);
+router.post('/ca',creatCA.CA_Details);
 
 
 export default router;

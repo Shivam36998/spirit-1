@@ -1,38 +1,58 @@
-<div class="order-container dfx">
-	<a type="button" class="back" href="/">Home</a>
-	<form method="POST" action="/payments/order">
-		<div class="order-box">
-			<div class="logo dfx">
-				<img src="/image/logo_dark.png" alt="spirit'23">
-			</div>
-			<div class="order-elm dfx">
-				<label for="amountInput" class="form-label">Totel Amount</label>
-				<input name="amount" type="text" min="1" class="form-control form-control-lg" id="amountInput"
-					aria-describedby="amountHelp" readonly value="1500₹">
-				<p id="amountHelp" class="text">This is one time Registration fee! after payment you can 
-				apply for multiple events.	
-				</p>
-			</div>
-			<div class="order-elm dfx">
-				<button type="submit" class="conform" id="getOrderIdBtn">Confirm!</button>
-			</div>
-		</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/all.css">
+	<title>Payments</title>
+</head>
+<body>
+	<nav>
+        <a href="/" style="margin:5px 10px; text-decoration:none; color:#00b9ce;
+        font-size:25px;"><i class="fa-solid fa-house"></i> Home</a>
+    </nav>
 
-		
-	</form>
-</div>
+	<div class="order-container dfx">
+		<form method="POST" action="/payments/order">
+			<div class="order-box">
+				<div class="logo dfx">
+					<img src="/image/logo_dark.png" alt="spirit'23">
+				</div>
+				<div class="order-elm dfx">
+					<label for="amountInput" class="form-label">Totel Amount</label>
+					<input name="amount" type="text" min="1" class="form-control form-control-lg" id="amountInput"
+						aria-describedby="amountHelp" readonly value="1500₹">
+					<p id="amountHelp" class="text">This is one time Registration fee! after payment you can 
+					apply for multiple events.	
+					</p>
+				</div>
+				<div class="order-elm dfx">
+					<button type="submit" class="conform" id="getOrderIdBtn">Confirm!</button>
+				</div>
+			</div>
+	
+			
+		</form>
+	</div>
+<script src="/js/all.js"></script>
+</body>
+</html>
+
 
 <style>
+	body{
+		background: #003459;
+	}
 	.order-container {
 		height: 100vh;
 		width: 100%;
-		background-color: #ecf1ff;
 
 	}
 	.order-box{
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		width: 30vw;
-		border-top:10px solid   rgb(93, 186, 189)  ;
+		border-top:10px solid  #007ea7  ;
 		background-color: white;
 		
 		
@@ -58,7 +78,7 @@
 		outline: none;
 		padding: 5px 20px;
 		margin: 10px 2px;
-		background-color: rgb(93, 186, 189);
+		background-color:#007ea7;
 		color: white;
 		border-radius: 5px;
 		font-size: 18px;
