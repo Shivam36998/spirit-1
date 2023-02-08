@@ -11,6 +11,7 @@ const client_schema= new mongoose.Schema({
     city:{type:String,trim:true},
     email:{type:String, required:true,trim:true, unique:true},
     phone:{type:Number, min:1000000000, max:9999999999},
+    whatsapp:{type:Number, min:1000000000, max:9999999999},
     password:{type:String,required:true, trim:true},
     tokens:[
         {

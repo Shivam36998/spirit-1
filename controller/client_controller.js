@@ -14,7 +14,7 @@ class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
         try {
-            const { name,lname, gender, college, year, city, email, phone } = req.body;
+            const { name,lname, gender, college, year, city, email, phone,whatsapp } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
                 var messages="Email already exist!!";
@@ -32,6 +32,7 @@ class data_collector {
                     city: city,
                     email: email,
                     phone: phone,
+                    whatsapp:whatsapp,
                     password: hashPassword,
 
                 })

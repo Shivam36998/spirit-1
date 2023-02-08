@@ -28,7 +28,7 @@
 					</p>
 				</div>
 				<div class="order-elm dfx">
-					<button type="submit" class="conform" id="getOrderIdBtn">Confirm!</button>
+					<button type="submit" class="conform" id="getOrderIdBtn">Checkout</button>
 				</div>
 			</div>
 	
@@ -49,11 +49,18 @@
 		width: 100%;
 
 	}
+	.order-container form{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	.order-box{
-		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-		width: 30vw;
-		border-top:10px solid  #007ea7  ;
 		background-color: white;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		border-top:10px solid  #007ea7  ;
+		margin: 6px;
+		border-radius: 5px;
 		
 		
 	}
@@ -70,6 +77,7 @@
 	.order-elm .text{
 		text-align: center;
 		font-size: 15px;
+		width: 60%;
 		padding: 2px 10px;
         
 	}
@@ -100,10 +108,5 @@
 		align-items: center;
 	}
 
-	.back{
-		display:absolute;
-		top:0;
-		left: 0;
-		color: red;
-	}
+	
 </style>

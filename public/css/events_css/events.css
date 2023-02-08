@@ -42,7 +42,7 @@ body
 	font-family: 'Poppins', sans-serif;
 	font-size: 45px;
     text-transform: uppercase;
-    color: #007ea7;
+    color: #00b4d8;
 
 }
 
@@ -85,9 +85,9 @@ body
     color: white;
 }
 .event-rule-btn{
-    border: .7px solid #007ea7;
+    border: .7px solid #00b4d8;
     outline: none;
-    color: #007ea7;
+    color: #00b4d8;
 }
 .event-rule-btn:hover{
     background-color: #00b4d8 !important;

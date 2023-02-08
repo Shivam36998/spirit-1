@@ -7,7 +7,7 @@ const Connect_data= async (data_url)=>{
             // console.log('connected successfully');
             
     }catch(err){
-        console.log(err);
+        console.log(err.messages);
         
     }
 }

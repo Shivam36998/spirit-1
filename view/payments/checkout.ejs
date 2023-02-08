@@ -1,22 +1,39 @@
-<div class="row d-flex justify-content-center">
-    <div class="col-sm-10 col-md-8 col-lg-5">
-        <div class="card">
-            <h5 class="card-header">Confirm Order</h5>
-            <div class="card-body">
-                <p class="card-text">Thank you for taking up this decision.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm!</title>
+</head>
+<body>
+<div class="checkout-box">
+    <div class="check-main">
+        <div class="check-card">
+            <h1 class="check-head">Confirm!</h1>
+            <div class="check-body">
+                <p class="check-text">Verify the amount and click the button below to proceed.</p>
+                <form>
+                    <div class="check-list">
+                        <label for="oredr">Order Id-</label>
+                        <input type="text" readonly name="order" id="order" value='<%- payment_data.orderId %>'>
+                    </div>
+                    <div class="check-list">
+                        <label for="currency">Currency-</label>
+                        <input type="text" readonly name="currency" id="currency" value='<%- payment_data.currency %>'>
+                    </div>
+                    <div class="check-list">
+                        <label for="amount">Amount-</label>
+                        <input type="text" readonly name="amount" id="amount" value='<%- payment_data.amount/100 %>₹'>
+                    </div>
 
-                <dl class="row mt-2">
-                    <dt class="col-sm-3">Order ID</dt>
-                    <dd class="col-sm-9" id="orderId"><%- payment_data.orderId %> </dd>
+                </form>
+                
 
-                    <dt class="col-sm-3">Currency</dt>
-                    <dd class="col-sm-9"><%- payment_data.currency %> </dd>
-
-                    <dt class="col-sm-3">Amount</dt>
-                    <dd class="col-sm-9"><%- payment_data.amount/100 %> Rs. </dd>
-                </dl>
-
-                <button type="submit" class="btn btn-primary" onclick="checkout(event)">Checkout</button>
+               <div class="check-btn-box">
+                <button type="submit" class="check-btn" onclick="checkout(event)">Proceed</button>
+                <button type="button" class="check-btn" id="check-cancel" onclick="history.back()">Cancel</button>
+               </div>
             </div>
         </div>
         <form id="paymentVerifyForm" action="/payments/verify" method="POST">
@@ -26,6 +43,125 @@
         </form>
     </div>
 </div>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        background-color: #003459;
+
+    }
+
+    .checkout-box {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .check-main {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .check-card {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        margin: 5px 15px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-top: 10px solid #007ea7 ;
+        width:500px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+    .check-body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .check-body form{
+        width: 100%;
+    }
+    .check-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 5px;
+    }
+    .check-list label, input{
+        margin: 0px 5px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .check-list label{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .check-btn{
+        border: none;
+		outline: none;
+		padding: 5px 20px;
+		margin: 10px 2px;
+		background-color:#00a72f;
+		color: white;
+		border-radius: 5px;
+		font-size: 18px;
+		transition: .4s;
+		cursor: pointer;
+    }
+    .check-btn:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background-color: #00688b;
+    }
+    #check-cancel{
+        background-color: #f93411ee;
+    }
+    .check-head{
+        color: #00a72f;
+        margin: 15px 2px;
+    }
+    .check-text{
+        font-size: 16px;
+        text-align: center;
+        color: #003459;
+    }
+    @media (max-width:542px){
+        .check-main{
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .check-card{
+            height:auto;
+            margin-top: 70px;
+        }
+    }
+
+    @media (max-width:368px){
+        .check-list label,input{
+            font-size: 13px;
+        }
+        .check-head{
+            font-size: 20px;
+        }
+        .check-btn{
+            padding:2px 10px;
+            font-size: 13px;
+        }
+    }
+</style>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
@@ -33,11 +169,11 @@
         const razorpayKeyId = '<%- razorpayKeyId %>'
         const orderId = '<%- JSON.stringify(payment_data.orderId) %>'
         const options = {
-            "key":"rzp_test_YJszVfQ6pfS8o9",
+            "key": "rzp_test_YJszVfQ6pfS8o9",
             "currency": "INR",
             "name": "Spirit'2023",
             "description": "Hope you doing well ☺️",
-            "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png",
+            "image": "/image/logo_dark.png",
             "order_id": JSON.parse(orderId),
             "handler": function (response) {
                 document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
@@ -51,7 +187,7 @@
                 }
             },
             "theme": {
-                "color": "#6f42c1"
+                "color": "#003459"
             }
         };
         const razorpay = new Razorpay(options);
@@ -59,3 +195,6 @@
         event.preventDefault();
     }
 </script>
+
+</body>
+</html>
