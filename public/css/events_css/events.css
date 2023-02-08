@@ -13,11 +13,12 @@ body
     background: #003459;
 
 }
-/* .button-container{
-    background-color: #7286D3;
-    /* height:100px; */
-/* } */
- 
+
+.coming-soon{
+
+    height: 300px;
+    padding-top: 100px;
+}
 
 .event-button{
     color:#E5E0FF !important;
@@ -27,7 +28,6 @@ body
     
     margin: 5% 3%;
 }
-
 
 
 /* ********************** tab-content section ***************************** */
@@ -59,14 +59,11 @@ body
 .event-content{
     max-width: 570px;
 }
-.event-content p{
-    /* color: white; */
-}
 
 .event-img{
 
-    width: 33%;
-    height: 280px;
+    width: 35%;
+    height: 300px;
 }
 
 .event-img img{
@@ -84,8 +81,8 @@ body
 
 .event-reg-btn{
     outline: none;
-    background-color: #00b4d8;
-    color: black;
+    background-color: #007ea7;
+    color: white;
 }
 .event-rule-btn{
     border: .7px solid #00b4d8;
@@ -93,12 +90,12 @@ body
     color: #00b4d8;
 }
 .event-rule-btn:hover{
-    background-color: #007ea7 !important;
-    color: black;
+    background-color: #00b4d8 !important;
+    color: white;
 }
 .event-reg-btn:hover{
-    border: .7px solid #00b4d8 ;
-    color: #00b4d8;
+    color: white !important;
+    background-color: #00b4d8!important;
 }
 
 @media (max-width:1200px) {
@@ -232,6 +229,10 @@ body
 .accordion-button, .accordion-body{
 
     font-size: 0.8rem;
+    background-color: #00b4d8;
+    color: rgb(6, 30, 58);
+
+
 }
 .accordion-button:not(.collapsed){
     

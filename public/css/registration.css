@@ -111,7 +111,7 @@ font-family: 'Knewave', cursive;
 }
 
 .registration .form_elm  #togglePassword{
-    margin-left: 120px;
+    margin-left: 10%;
     cursor: pointer;
 }
 
