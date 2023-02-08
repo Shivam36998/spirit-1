@@ -380,20 +380,6 @@ hr {
 		/* padding: 1rem !important; */
 	}
 
-	/* .footer-card-headings{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-	} */
-
-	/* .footer-card-content{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	} */
-
 	.footer-links {
 
 		margin-bottom: 0rem !important;
@@ -407,9 +393,7 @@ hr {
 
 @media (max-width: 703px) {
 	.socials {
-		/* display: flex;
-		align-items: center;
-		justify-content: center; */
 		flex-direction: column;
+		padding-bottom: 0.7rem !important;
 	}
 }
