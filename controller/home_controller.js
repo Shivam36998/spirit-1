@@ -64,7 +64,8 @@ class home_event {
             }
             const token = Jwt.sign(payload, secret, { expiresIn: '15m' });
             // link
-            const link = `http://localhost:5000/reset-password/${result._id}/${token}`
+            const link = `https://www.spiritiitbhu.com/reset-password/${result._id}/${token}`
+            // const link = `hii`
             console.log(link);
             // const testAccount = await nodemailer.createTestAccount();
 

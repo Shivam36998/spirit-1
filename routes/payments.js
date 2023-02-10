@@ -24,6 +24,7 @@ let razorPayInstance = new Razorpay({
  * Make Donation Page
  * 
  */
+
 router.get('/', function (req, res, next) {
     // Render form for accepting amount
     res.render('payments/order', {
