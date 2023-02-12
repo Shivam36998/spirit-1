@@ -3,6 +3,7 @@ import home_event from '../controller/home_controller.js';
 import data_collector from '../controller/client_controller.js';
 import authUser from '../middleware/authUser.js';
 import creatCA from '../controller/CA_controller.js';
+import message from '../middleware/registration_mdw.js';
 const router=express.Router();
 
 router.get('/',home_event.My_home);
@@ -17,7 +18,7 @@ router.get('/login',home_event.My_login);
 router.post('/login',data_collector.client_login);
 
 router.get('/logout',authUser, data_collector.client_logout);
-router.get('/registration',home_event.My_registration);
+router.get('/registration',message,home_event.My_registration);
 router.post('/registration',data_collector.creat_client);
 // router.get('/login',home_event.My_login);
 // router.get('/registration',home_event.My_registration);
