@@ -1,6 +1,7 @@
 import client_model from "../model/cliend_model.js";
 import data_collector from "./client_controller.js";
 import bcrypt from 'bcrypt';
+import enrolled_user_model from "../model/enrolled_user.js";
 // import jwt from 'jsonwebtoken';
 
 
@@ -65,24 +66,16 @@ static adminHome=async(req,res)=>{
 
 static events_reg= async(req,res)=>{
     try{
-        const all_result=await client_model.find();
-        var scientific=new Array();
-        var rhetorica=new Array();
-        var analytical=new Array();
+        const scientific=await enrolled_user_model.find({"event_name":"Scientific"});
+        const rhetorica=await enrolled_user_model.find({"event_name":"Rhetorica"});
+        const magnacarta=await enrolled_user_model.find({"event_name":"Magna-Carta"});
         
-        all_result.forEach((item)=>{
-            if(item.Scientific.length>0){
-                scientific.push(item);
-            }
-            if(item.Rhetorica.length>0){
-                rhetorica.push(item);
-            }
-            if(item.Analytical.length>0){
-                analytical.push(item);
-            }
+        res.render('admin/events_reg',{scientific,magnacarta,rhetorica});
+        scientific.forEach((item)=>{
+            console.log(item.subevent);
+            
         })
-
-        res.render('admin/events_reg',{scientific,rhetorica,analytical})
+        
         // res.send('hii')
         // console.log(typeof(all_result.sc));
         

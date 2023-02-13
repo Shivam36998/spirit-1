@@ -28,7 +28,7 @@ class event_handler {
       if (!verifyUser) {
         res.send("error 404");
       } else {
-        const { email, select1, select2, phone, whatsapp, college, year } =
+        const { name,email, select1, select2, phone, whatsapp, college, year } =
           req.body;
         // const id = verifyUser._id;
         const email_=await enrolled_user_model.findOne({email:email})
@@ -41,6 +41,7 @@ class event_handler {
         }
 
         const user_doc = new enrolled_user_model({
+          name:name,
           email: email,
           event_name: select1,
           subevent: select2,
