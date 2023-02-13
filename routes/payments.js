@@ -37,12 +37,21 @@ router.get('/', function (req, res, next) {
  * 
  */
 router.post('/order', function (req, res, next) {
+    const val=req.body.cost;
+    let amount=1700;
+    if(val=="1100"){
+        amount=1100;
+    }
+    
     const params = {
-        amount: 1500 * 100,
+        amount: amount * 100,
         currency: "INR",
         receipt: nanoid(),
         payment_capture: "1"
     }
+    console.log('hi i am just below the params of payment');
+    console.log(val);
+    
     razorPayInstance.orders.create(params)
         .then(async (response) => {
             // user details
