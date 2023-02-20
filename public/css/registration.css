@@ -152,16 +152,17 @@ font-family: 'Knewave', cursive;
   }
 
 .registration ::placeholder {
-    color: black;
+    color: rgb(63, 63, 63);
     opacity: 1; /* Firefox */
+    font-size: 13px;
   }
   
  .registration :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: black;
+   color: rgb(66, 65, 65);
   }
   
  .registration ::-ms-input-placeholder { /* Microsoft Edge */
-   color: black;
+   color: rgb(62, 62, 62);
   }
 
 

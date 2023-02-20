@@ -18,7 +18,7 @@ router.get('/login',home_event.My_login);
 router.post('/login',data_collector.client_login);
 
 router.get('/logout',authUser, data_collector.client_logout);
-router.get('/registration',home_event.My_registration);//  message
+router.get('/registration',message,home_event.My_registration);
 router.post('/registration',data_collector.creat_client);
 // router.get('/login',home_event.My_login);
 // router.get('/registration',home_event.My_registration);
@@ -49,6 +49,10 @@ router.get('/mydb',authUser,home_event.client_dashboard);
 // route for CA
 router.get('/ca',creatCA.CA_page);
 router.post('/ca',creatCA.CA_Details);
+
+router.get('/ca_login',(req,res)=>{
+    res.render('ca/ca_login',{'title':'Campus Ambessador'})
+})
 
 
 export default router;

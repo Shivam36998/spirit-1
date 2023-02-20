@@ -11,7 +11,9 @@ const caSchema= new mongoose.Schema({
     whatsapp:{type:Number,require:true,min:1000000000, max:9999999999},
     address:{type:String},
     code:{type:Number},
-    question:{type:String, require:true}
+    password:{type:String,require:true, trim:true},
+    question:{type:String, require:true},
+    SpiritID:{type:String, default:'SP23'+Date.now().toString(36)}
 })
 
 
