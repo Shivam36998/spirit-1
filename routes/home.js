@@ -18,7 +18,7 @@ router.get('/login',home_event.My_login);
 router.post('/login',data_collector.client_login);
 
 router.get('/logout',authUser, data_collector.client_logout);
-router.get('/registration',message,home_event.My_registration);
+router.get('/registration',home_event.My_registration); // 👈 message (middleware)
 router.post('/registration',data_collector.creat_client);
 // router.get('/login',home_event.My_login);
 // router.get('/registration',home_event.My_registration);

@@ -28,78 +28,83 @@ let razorPayInstance = new Razorpay({
 router.get('/', function (req, res, next) {
     // Render form for accepting amount
     res.render('payments/order', {
-        title: 'payments'
+        title: 'payments portal: Spirit23'
     });
+    console.log('i am afetr all');
 });
+
+
 
 /**
  * Checkout Page
  * 
  */
-router.post('/order', function (req, res, next) {
-    const val=req.body.cost;
-    let amount=1700;
-    if(val=="1100"){
-        amount=1100;
-    }
+
+// here for revert razorpay 👇👇👇👇
+// router.post('/order', function (req, res, next) {
+//     const val=req.body.cost;
+//     let amount=1700;
+//     if(val=="1100"){
+//         amount=1100;
+//     }
     
-    const params = {
-        amount: amount * 100,
-        currency: "INR",
-        receipt: nanoid(),
-        payment_capture: "1"
-    }
-    console.log('hi i am just below the params of payment');
-    console.log(val);
+//     const params = {
+//         amount: amount * 100,
+//         currency: "INR",
+//         receipt: nanoid(),
+//         payment_capture: "1"
+//     }
+//     console.log('hi i am just below the params of payment');
+//     console.log(val);
     
-    razorPayInstance.orders.create(params)
-        .then(async (response) => {
-            // user details
-            const token = req.cookies.spirit;
-            const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
-            const clint_detail=await client_model.findOne({_id:verifyUser._id})
-            if(clint_detail.payment_status=="paid"){
-                var messages="Payment already done! go for event registration!";
-                res.render('error/greet', { 'title': 'spirit', messages, state:true});
-                console.log(messages);
+//     razorPayInstance.orders.create(params)
+//         .then(async (response) => {
+//             // user details
+//             const token = req.cookies.spirit;
+//             const verifyUser = jwt.verify(token, process.env.JWT_SECREAT_KEY);
+//             const clint_detail=await client_model.findOne({_id:verifyUser._id})
+//             if(clint_detail.payment_status=="paid"){
+//                 var messages="Payment already done! go for event registration!";
+//                 res.render('error/greet', { 'title': 'spirit', messages, state:true});
+//                 console.log(messages);
                 
                 
-                return;
-            }
+//                 return;
+//             }
 
-           ////////////////// 
+//            ////////////////// 
 
-            const razorpayKeyId = process.env.key_id
-            // Save orderId and other payment details
-            const payment_data = new Payment_model({
-                name:clint_detail.name,
-                email:clint_detail.email,
-                orderId: response.id,
-                receiptId: response.receipt,
-                amount: response.amount,
-                currency: response.currency,
-                createdAt: response.created_at,
-                status: response.status
-            })
-            try {
-                // Render Order Confirmation page if saved succesfully
-                await payment_data.save()
-                res.render('payments/checkout', {
-                    title: "Confirm Order",
-                    razorpayKeyId: razorpayKeyId,
-                    payment_data: payment_data
-                })
-            } catch (err) {
-                // Throw err if failed to save
-                if (err) console.log(err);
-                err;
-            }
-        }).catch((err) => {
-            // Throw err if failed to create order
-            if (err) console.log(err);
+//             const razorpayKeyId = process.env.key_id
+//             // Save orderId and other payment details
+//             const payment_data = new Payment_model({
+//                 name:clint_detail.name,
+//                 email:clint_detail.email,
+//                 orderId: response.id,
+//                 receiptId: response.receipt,
+//                 amount: response.amount,
+//                 currency: response.currency,
+//                 createdAt: response.created_at,
+//                 status: response.status
+//             })
+//             try {
+//                 // Render Order Confirmation page if saved succesfully
+//                 await payment_data.save()
+//                 res.render('payments/checkout', {
+//                     title: "Confirm Order",
+//                     razorpayKeyId: razorpayKeyId,
+//                     payment_data: payment_data
+//                 })
+//             } catch (err) {
+//                 // Throw err if failed to save
+//                 if (err) console.log(err);
+//                 err;
+//             }
+//         }).catch((err) => {
+//             // Throw err if failed to create order
+//             if (err) console.log(err);
 
-        })
-});
+//         })
+// });
 
 /**
  * Verify Payment
