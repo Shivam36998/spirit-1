@@ -12,6 +12,7 @@ router.get('/gallery',home_event.My_gallery);
 router.get('/speakers',home_event.speakers);
 router.get('/sponsors',home_event.sponsors);
 router.get('/about',home_event.about);
+router.get('/workshop',message);
 router.get('/developer team',home_event.My_gallery);
 // router.get('/events',home_event.My_gallery);
 router.get('/login',home_event.My_login);
@@ -47,7 +48,7 @@ router.get('/mydb',authUser,home_event.client_dashboard);
 // router.post('api/payment/verify',home_event.verifyOrder)
 
 // route for CA
-router.get('/ca',creatCA.CA_page);
+router.get('/ca',authUser,creatCA.CA_page);
 router.post('/ca',creatCA.CA_Details);
 
 router.get('/ca_login',(req,res)=>{
