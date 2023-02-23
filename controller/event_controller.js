@@ -36,7 +36,7 @@ class event_handler {
 
         if(email_ && event_){
           let messages="Great! you are already registered for this event.";
-            res.render('error/greet', { 'title': `Already registered!`, messages, state:true });
+            res.render('error/greet', { 'title': `Events|Spirit23`, messages, state:true });
             return;
         }
 

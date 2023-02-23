@@ -18,7 +18,7 @@ class data_collector {
             const client = await client_model.findOne({ email: email });
             if (client) {
                 var messages="Email already exist!!";
-                res.render('error/greet', { 'title': 'error', messages, state:false});
+                res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
                 console.log(messages);
                 
             }
@@ -96,13 +96,13 @@ class data_collector {
                 }
                 else {
                     var messages="Wrong EmailId or Password";
-                    res.render('error/greet', { 'title': `Login failed ☹️`, messages, state:false });
+                    res.render('error/greet', { 'title': `Login failed ☹️|Spirit23`, messages, state:false });
 
                 }
             }
             else {
                 var messages="You are not a registered user!"
-                res.render('error/greet', { 'title': `Login failed ☹️`, messages, state:false });
+                res.render('error/greet', { 'title': `Login failed ☹️|Spirit23`, messages, state:false });
             }
         } catch (err) {
             console.log(err);

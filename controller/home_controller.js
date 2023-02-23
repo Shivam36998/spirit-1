@@ -26,24 +26,24 @@ class home_event {
         res.render('registration/login', { 'title': 'login here' })
     }
     static My_registration = (req, res) => {
-        res.render('registration/registration', { 'title': 'welcome!' })
+        res.render('registration/registration', { 'title': 'Registration| Spirit23' })
     }
 
     static speakers = (req, res) => {
-        res.render('pages/speakers', { 'title': 'spirit 2023: speakers!' });
+        res.render('pages/speakers', { 'title': 'Speakers | Spirit23' });
     }
     static about = (req, res) => {
-        res.render('pages/about', { 'title': 'spirit 2023: know more about us' })
+        res.render('pages/about', { 'title': 'About us| Spirit23' })
     }
     static sponsors = (req, res) => {
-        res.render('pages/sponsors', { 'title': 'our sponsors' });
+        res.render('pages/sponsors', { 'title': 'Sponsors| Spirit23' });
     }
 
     static forgetPassword = (req, res) => {
         res.render('registration/forget-password')
     }
     static My_payment_dashboard=(req,res)=>{
-        res.render('payments/payment_dashboard',{'title':'welcome!'})
+        res.render('payments/payment_dashboard',{'title':'Payment| Spirit23'})
     }
 
     static forgetPassword_verify = async (req, res) => {
@@ -192,7 +192,7 @@ class home_event {
         try{
             if(!verifyUser){
                 var messages="You are not a registered user!!!"
-                res.render('error/greet',{"title":'error',messages,state:false});
+                res.render('error/greet',{"title":'Dashboard| Spirit23',messages,state:false});
                 return;
             }
             const data=await client_model.findOne({_id:verifyUser._id});

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Campus Ambassador | Spirit'23</title>
     
 
 </head>
@@ -35,7 +35,7 @@
         <div class="alert alert-success" role="alert">
             Welcome to Spirit!
           </div>
-        <div class="card text-center">
+        <div class="card text-center card_dash">
             <div class="card-header" >
               <p class="spirit_id">Spirit ID:<span><%- ID %> </span></p>
             </div>
@@ -59,7 +59,7 @@
                         <% data.forEach((item)=>{ %>
                       <tr>
                         <th scope="row"><%- i++ %></th>
-                        <td><%-item.name %></td>
+                        <td><%-item.name %> <%- item.lname %></td>
                         <td><%-item.email %></td>
                         <td><%-item.college %></td>
                       </tr>
@@ -81,6 +81,9 @@
         .spirit_id span{
             color:cadetblue;
             font-weight: 600;
+        }
+        .card_dash{
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         }
       </style>
 
