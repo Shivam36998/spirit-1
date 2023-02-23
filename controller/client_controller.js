@@ -14,7 +14,7 @@ class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
         try {
-            const { name,lname, gender, college, year, city, email, phone,whatsapp } = req.body;
+            const { name,lname, gender, college, year, city,referral, email, phone,whatsapp } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
                 var messages="Email already exist!!";
@@ -30,6 +30,7 @@ class data_collector {
                     college: college,
                     year: year,
                     city: city,
+                    referral:referral,
                     email: email,
                     phone: phone,
                     whatsapp:whatsapp,
@@ -89,8 +90,8 @@ class data_collector {
 
                     // res.send(`hey ${result.name} welcome to spirit family
                     // this is your dashboard.`);
-
-                    res.render('events/event', { 'title':`welcome😍 ${result.name}`, messages:`${result.name}`});
+                    res.redirect('/mydb');
+                    // res.render('events/event', { 'title':`welcome😍 ${result.name}`, messages:`${result.name}`});
                     // toggle_log();
                 }
                 else {

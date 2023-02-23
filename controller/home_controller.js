@@ -4,6 +4,7 @@ import client_model from "../model/cliend_model.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
+import enrolled_user_model from '../model/enrolled_user.js';
 
 
 
@@ -195,7 +196,10 @@ class home_event {
                 return;
             }
             const data=await client_model.findOne({_id:verifyUser._id});
-            res.render('pages/dashboard',{data});
+            const event_data=await enrolled_user_model.find({email:data.email});
+            // console.log(typeof(event_data));
+            
+            res.render('pages/dashboard',{val:event_data,data:data});
         }catch(err){
             console.log(err.messages);
             
