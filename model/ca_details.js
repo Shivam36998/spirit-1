@@ -14,7 +14,7 @@ const caSchema= new mongoose.Schema({
     code:{type:Number},
     password:{type:String,require:true, trim:true},
     question:{type:String, require:true},
-    SpiritID:{type:String, default:'SP23'+Math.random().toString().substr(2, 4)},//Date.now().toString(36)
+    SpiritID:{type:String, default:'SP'+Math.random().toString().substr(2, 6)},//Date.now().toString(36)
     tokens:[
         {
             token:{

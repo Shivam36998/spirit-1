@@ -131,31 +131,6 @@ class data_collector {
 
     }
 
-    // static creat_subscriber= async (req,res)=>{
-    //     try{
-    //         const email=req.body;
-    //         const subs_doc=new subscriber_model({
-    //            email:email
-    //         })
-    //         const result= await subs_doc.save();
-    //         console.log(result);
-
-
-    //     }catch(err){
-    //         console.log(err);
-
-    //     }
-    // }
-
-    // static fatch_subscriber = async (req, res) => {
-    //     try {
-    //         const result = await subscriber_model.find()
-    //     } catch (error) {
-    //         console.log(error);
-
-    //     }
-    // }
-
 
     // reset email
     // static sendClientPasswordResetEmail= async(req,res)=>{

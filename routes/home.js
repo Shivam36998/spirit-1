@@ -35,7 +35,7 @@ router.get('/reset-password/:id/:token',home_event.resetPassword);
 router.post('/reset-password/:id/:token',home_event.savePassword);
 
 //payment dashboard
-router.get('/payment_dashboard',home_event.My_payment_dashboard);
+// router.get('/payment_dashboard',home_event.My_payment_dashboard);
 
 // payment getway integration
 // router.get('/payments',(req,res)=>{

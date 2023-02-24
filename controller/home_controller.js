@@ -42,9 +42,9 @@ class home_event {
     static forgetPassword = (req, res) => {
         res.render('registration/forget-password')
     }
-    static My_payment_dashboard=(req,res)=>{
-        res.render('payments/payment_dashboard',{'title':'Payment| Spirit23'})
-    }
+    // static My_payment_dashboard=(req,res)=>{
+    //     res.render('payments/payment_dashboard',{'title':'Payment| Spirit23'})
+    // }
 
     static forgetPassword_verify = async (req, res) => {
         try {
@@ -67,7 +67,7 @@ class home_event {
             // link
             const link = `https://www.spiritiitbhu.com/reset-password/${result._id}/${token}`
             // const link = `hii`
-            console.log(link);
+            // console.log(link);
             // const testAccount = await nodemailer.createTestAccount();
 
             const transporter = nodemailer.createTransport({
@@ -128,7 +128,8 @@ class home_event {
         // res.send(result)
 
         if (!result) {
-            res.send('not a valid user')
+            var messages="Not a valid!!";
+            res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
             return;
         }
         //  id is valid

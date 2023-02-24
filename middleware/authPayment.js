@@ -26,7 +26,7 @@ const authPayment = async (req, res, next) => {
                  
                 })
                 // .catch(err => console.error(err));
-            if (client.payment_status == "unpaid") {
+            if (client.payment_status == "npaid") {
 
                res.redirect('/payments');
 

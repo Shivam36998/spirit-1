@@ -39,20 +39,23 @@ class event_handler {
             res.render('error/greet', { 'title': `Events|Spirit23`, messages, state:true });
             return;
         }
+        else{
+          const user_doc = new enrolled_user_model({
+            name:name,
+            email: email,
+            event_name: select1,
+            subevent: select2,
+            phone: phone,
+            whatsapp: whatsapp,
+            college: college,
+            year: year,
+          });
+  
+          await user_doc.save();
+          res.redirect('/mydb');
+        }
 
-        const user_doc = new enrolled_user_model({
-          name:name,
-          email: email,
-          event_name: select1,
-          subevent: select2,
-          phone: phone,
-          whatsapp: whatsapp,
-          college: college,
-          year: year,
-        });
-
-        await user_doc.save();
-        res.send("data saved successfully");
+        
       }
     } catch (error) {
       console.log(error);

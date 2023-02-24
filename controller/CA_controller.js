@@ -15,8 +15,6 @@ class creatCA{
             const hashPassword = await bcrypt.hash(req.body.password, 10);
             const CA= await ca_model.findOne({email:email});
             if (CA) {
-                console.log(email);
-                
                 var messages="Email already exist!!";
                 res.render('error/greet', { 'title': 'error', messages, state:false});
                 // console.log(messages);
@@ -75,11 +73,13 @@ class creatCA{
                 }
                 else {
                     // var messages="Wrong EmailId or Password";
-                    res.send("fuck off ca");
+                    var messages="Wrong email id or password!!";
+                    res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
     
                 }
             }else{
-                res.send("fuck you bitch!!");;
+                var messages="No such user exist!!";
+                res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
             }
         }
         catch(err){
