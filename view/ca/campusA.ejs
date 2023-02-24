@@ -28,30 +28,35 @@
                             <div class="combined">
                                 <div class="form_elm">
                                     <label for="name">First Name</label>
-                                    <input type="text" id="name" name="name" placeholder="What is you first name?" class="me-3" required="true">
+                                    <input type="text" id="name" name="name" placeholder="What is you first name?"
+                                        class="me-3" required="true">
                                 </div>
                                 <div class="form_elm">
                                     <label for="lname">Last Name</label>
-                                    <input type="text" id="lname" name="lname" placeholder="What is your last name?" required="true">
+                                    <input type="text" id="lname" name="lname" placeholder="What is your last name?"
+                                        required="true">
                                 </div>
 
                             </div>
 
                             <div class="form_elm">
                                 <label for="email">Email id</label>
-                                <input type="email" name="email" autocomplete="off" id="email" placeholder="Who do we reply to" required>
+                                <input type="email" name="email" autocomplete="off" id="email"
+                                    placeholder="Who do we reply to" required>
                             </div>
                             <div class="form_elm">
                                 <label for="whatsapp">Whatsapp number</label>
-                                <input type="tel" name="whatsapp" placeholder="Enter you Whatsapp active number" id="whatsapp" required>
+                                <input type="tel" name="whatsapp" placeholder="Enter you Whatsapp active number"
+                                    id="whatsapp" required>
                             </div>
                             <div class="form_elm">
                                 <label for="phone">Contact number</label>
-                                <input type="tel" name="phone" id="phone"  required>
+                                <input type="tel" name="phone" id="phone" required>
                             </div>
                             <div class="form_elm">
                                 <label for="college">College name</label>
-                                <input type="text" name="college" placeholder="Institute in which you study" id="college">
+                                <input type="text" name="college" placeholder="Institute in which you study"
+                                    id="college">
                             </div>
                             <div class="combined">
                                 <!-- hh -->
@@ -84,7 +89,8 @@
                             <div class="combined">
                                 <div class="form_elm">
                                     <label for="address">Postal Address</label>
-                                    <input type="text" id="address" placeholder="Provide your complete address" name="address" class="me-3" required="true">
+                                    <input type="text" id="address" placeholder="Provide your complete address"
+                                        name="address" class="me-3" required="true">
                                 </div>
                                 <div class="form_elm">
                                     <label for="code">Pin Code</label>
@@ -122,21 +128,21 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         const pass_match = document.getElementById("password")
-    , confirm_password = document.getElementById("cpassword");
+            , confirm_password = document.getElementById("cpassword");
 
-    function validatePassword() {
-    if (pass_match.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
-        confirm_password.setCustomValidity('');
-    }
-}
+        function validatePassword() {
+            if (pass_match.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
 
     </script>
 
