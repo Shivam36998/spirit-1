@@ -90,7 +90,7 @@ class data_collector {
 
                     // res.send(`hey ${result.name} welcome to spirit family
                     // this is your dashboard.`);
-                    res.redirect('/mydb');
+                    res.redirect('/dashboard');
                     // res.render('events/event', { 'title':`welcome😍 ${result.name}`, messages:`${result.name}`});
                     // toggle_log();
                 }
