@@ -44,7 +44,7 @@ router.post('/reset-password/:id/:token',home_event.savePassword);
 
 // user dashboard//
 
-router.get('/mydb',authUser,home_event.client_dashboard);
+router.get('/dashboard',authUser,home_event.client_dashboard);
 
 // router.post('create/orderId',home_event.creatOrer)
 // router.post('api/payment/verify',home_event.verifyOrder)
