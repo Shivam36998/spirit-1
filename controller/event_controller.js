@@ -52,7 +52,7 @@ class event_handler {
           });
   
           await user_doc.save();
-          res.redirect('/mydb');
+          res.redirect('/dashboard');
         }
 
         
