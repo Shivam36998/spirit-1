@@ -21,7 +21,6 @@ static adm_login= async(req,res)=>{
 static admin_verify=async(req,res)=>{
     try{
         const {email,password}=req.body;
-        const all_result= await client_model.find();
         const result= await client_model.findOne({email:email});
         if(result!=null){
             // const token=result.generateAuthToken();
@@ -69,15 +68,7 @@ static events_reg= async(req,res)=>{
         const scientific=await enrolled_user_model.find({"event_name":"Scientific"});
         const rhetorica=await enrolled_user_model.find({"event_name":"Rhetorica"});
         const magnacarta=await enrolled_user_model.find({"event_name":"Magna-Carta"});
-        
         res.render('admin/events_reg',{scientific,magnacarta,rhetorica});
-        scientific.forEach((item)=>{
-            console.log(item.subevent);
-            
-        })
-        
-        // res.send('hii')
-        // console.log(typeof(all_result.sc));
         
     }catch(error){
         console.log(error);

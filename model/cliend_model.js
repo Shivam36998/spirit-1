@@ -23,9 +23,9 @@ const client_schema= new mongoose.Schema({
     ],
     join:{type:Date,default:Date.now},
     is_admin:{type:Boolean,default:0},
+    referral:{type:String},
     payment_status:{type:String, default:"unpaid"},
-    paymentId:{type:String},
-    signature:{type:String}
+   
 })
 
 // generation token

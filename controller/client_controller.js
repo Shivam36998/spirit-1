@@ -14,11 +14,11 @@ class data_collector {
     static creat_client = async (req, res) => {
         const hashPassword = await bcrypt.hash(req.body.password, 10);
         try {
-            const { name,lname, gender, college, year, city, email, phone,whatsapp } = req.body;
+            const { name,lname, gender, college, year, city,referral, email, phone,whatsapp } = req.body;
             const client = await client_model.findOne({ email: email });
             if (client) {
                 var messages="Email already exist!!";
-                res.render('error/greet', { 'title': 'error', messages, state:false});
+                res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
                 console.log(messages);
                 
             }
@@ -30,6 +30,7 @@ class data_collector {
                     college: college,
                     year: year,
                     city: city,
+                    referral:referral,
                     email: email,
                     phone: phone,
                     whatsapp:whatsapp,
@@ -89,19 +90,19 @@ class data_collector {
 
                     // res.send(`hey ${result.name} welcome to spirit family
                     // this is your dashboard.`);
-
-                    res.render('events/event_login', { 'title':`welcome😍 ${result.name}`, messages:`${result.name}`});
+                    res.redirect('/dashboard');
+                    // res.render('events/event', { 'title':`welcome😍 ${result.name}`, messages:`${result.name}`});
                     // toggle_log();
                 }
                 else {
                     var messages="Wrong EmailId or Password";
-                    res.render('error/greet', { 'title': `Login failed ☹️`, messages, state:false });
+                    res.render('error/greet', { 'title': `Login failed ☹️|Spirit23`, messages, state:false });
 
                 }
             }
             else {
                 var messages="You are not a registered user!"
-                res.render('error/greet', { 'title': `Login failed ☹️`, messages, state:false });
+                res.render('error/greet', { 'title': `Login failed ☹️|Spirit23`, messages, state:false });
             }
         } catch (err) {
             console.log(err);
@@ -129,31 +130,6 @@ class data_collector {
         }
 
     }
-
-    // static creat_subscriber= async (req,res)=>{
-    //     try{
-    //         const email=req.body;
-    //         const subs_doc=new subscriber_model({
-    //            email:email
-    //         })
-    //         const result= await subs_doc.save();
-    //         console.log(result);
-
-
-    //     }catch(err){
-    //         console.log(err);
-
-    //     }
-    // }
-
-    // static fatch_subscriber = async (req, res) => {
-    //     try {
-    //         const result = await subscriber_model.find()
-    //     } catch (error) {
-    //         console.log(error);
-
-    //     }
-    // }
 
 
     // reset email

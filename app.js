@@ -13,6 +13,7 @@ import home_event from './controller/home_controller.js';
 import cookieParser from 'cookie-parser';
 import paymentRout from './routes/payments.js'
 import authUser from './middleware/authUser.js';
+import authPayment from './middleware/authPayment.js';
 const app=express();
 
 const port=process.env.PORT || 5000;

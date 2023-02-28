@@ -4,6 +4,7 @@ import client_model from "../model/cliend_model.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
+import enrolled_user_model from '../model/enrolled_user.js';
 
 
 
@@ -25,25 +26,25 @@ class home_event {
         res.render('registration/login', { 'title': 'login here' })
     }
     static My_registration = (req, res) => {
-        res.render('registration/registration', { 'title': 'welcome!' })
+        res.render('registration/registration', { 'title': 'Registration| Spirit23' })
     }
 
     static speakers = (req, res) => {
-        res.render('pages/speakers', { 'title': 'spirit 2023: speakers!' });
+        res.render('pages/speakers', { 'title': 'Speakers | Spirit23' });
     }
     static about = (req, res) => {
-        res.render('pages/about', { 'title': 'spirit 2023: know more about us' })
+        res.render('pages/about', { 'title': 'About us| Spirit23' })
     }
     static sponsors = (req, res) => {
-        res.render('pages/sponsors', { 'title': 'our sponsors' });
+        res.render('pages/sponsors', { 'title': 'Sponsors| Spirit23' });
     }
 
     static forgetPassword = (req, res) => {
         res.render('registration/forget-password')
     }
-    static My_payment_dashboard=(req,res)=>{
-        res.render('payments/payment_dashboard',{'title':'welcome!'})
-    }
+    // static My_payment_dashboard=(req,res)=>{
+    //     res.render('payments/payment_dashboard',{'title':'Payment| Spirit23'})
+    // }
 
     static forgetPassword_verify = async (req, res) => {
         try {
@@ -66,7 +67,7 @@ class home_event {
             // link
             const link = `https://www.spiritiitbhu.com/reset-password/${result._id}/${token}`
             // const link = `hii`
-            console.log(link);
+            // console.log(link);
             // const testAccount = await nodemailer.createTestAccount();
 
             const transporter = nodemailer.createTransport({
@@ -127,7 +128,8 @@ class home_event {
         // res.send(result)
 
         if (!result) {
-            res.send('not a valid user')
+            var messages="Not a valid!!";
+            res.render('error/greet', { 'title': 'error|Spirit23', messages, state:false});
             return;
         }
         //  id is valid
@@ -191,11 +193,14 @@ class home_event {
         try{
             if(!verifyUser){
                 var messages="You are not a registered user!!!"
-                res.render('error/greet',{"title":'error',messages,state:false});
+                res.render('error/greet',{"title":'Dashboard| Spirit23',messages,state:false});
                 return;
             }
             const data=await client_model.findOne({_id:verifyUser._id});
-            res.render('pages/dashboard',{data});
+            const event_data=await enrolled_user_model.find({email:data.email});
+            // console.log(typeof(event_data));
+            
+            res.render('pages/dashboard',{val:event_data,data:data});
         }catch(err){
             console.log(err.messages);
             

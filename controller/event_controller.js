@@ -36,23 +36,26 @@ class event_handler {
 
         if(email_ && event_){
           let messages="Great! you are already registered for this event.";
-            res.render('error/greet', { 'title': `Already registered!`, messages, state:true });
+            res.render('error/greet', { 'title': `Events|Spirit23`, messages, state:true });
             return;
         }
+        else{
+          const user_doc = new enrolled_user_model({
+            name:name,
+            email: email,
+            event_name: select1,
+            subevent: select2,
+            phone: phone,
+            whatsapp: whatsapp,
+            college: college,
+            year: year,
+          });
+  
+          await user_doc.save();
+          res.redirect('/dashboard');
+        }
 
-        const user_doc = new enrolled_user_model({
-          name:name,
-          email: email,
-          event_name: select1,
-          subevent: select2,
-          phone: phone,
-          whatsapp: whatsapp,
-          college: college,
-          year: year,
-        });
-
-        await user_doc.save();
-        res.send("data saved successfully");
+        
       }
     } catch (error) {
       console.log(error);
